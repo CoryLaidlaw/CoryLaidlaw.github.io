@@ -8,16 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #090e0b;
-    --surface: #0f1a13;
-    --surface2: #162019;
-    --border: #1c3025;
-    --accent: #2ecc71;
-    --accent2: #1a8c4e;
-    --accent3: #52e08a;
-    --text: #e8f5ee;
-    --muted: #6b9a7f;
-    --navy: #0b1610;
+    --bg: #0a0e14;
+    --surface: #111720;
+    --surface2: #192030;
+    --border: #1e2c3f;
+    --accent: #00d4ff;
+    --accent2: #7b61ff;
+    --accent3: #00ff9d;
+    --text: #e8f0fe;
+    --muted: #6b7fa3;
+    --navy: #0d1b2a;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,18 +41,19 @@
     border-radius: 50%;
     pointer-events: none;
     z-index: 10000;
-    box-shadow: 0 0 8px var(--accent), 0 0 20px rgba(46,204,113,0.6);
-    transform: translate(-50%, -50%);
+    transition: transform 0.1s, opacity 0.2s;
+    mix-blend-mode: screen;
   }
   .cursor-ring {
     position: fixed;
     width: 36px; height: 36px;
-    border: 1.5px solid rgba(46,204,113,0.8);
+    border: 1px solid rgba(0,212,255,0.4);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
-    transform: translate(-50%, -50%);
+    transition: transform 0.18s ease, width 0.2s, height 0.2s;
   }
+  body:hover .cursor { opacity: 1; }
 
   /* Noise overlay */
   body::before {
@@ -113,8 +114,8 @@
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(46,204,113,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(46,204,113,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
   }
@@ -122,14 +123,14 @@
   .hero-glow {
     position: absolute;
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(46,204,113,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%);
     top: 10%; left: -10%;
     pointer-events: none;
   }
   .hero-glow2 {
     position: absolute;
     width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(26,140,78,0.07) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(123,97,255,0.07) 0%, transparent 70%);
     bottom: 10%; right: 5%;
     pointer-events: none;
   }
@@ -193,7 +194,7 @@
     color: var(--bg);
     font-weight: 500;
   }
-  .btn-primary:hover { background: #3dd97a; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(46,204,113,0.3); }
+  .btn-primary:hover { background: #33ddff; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,255,0.3); }
   .btn-outline {
     border: 1px solid var(--border);
     color: var(--muted);
@@ -331,7 +332,7 @@
     overflow: hidden;
     transition: border-color 0.25s, transform 0.25s;
   }
-  .project-card:hover { border-color: rgba(46,204,113,0.4); transform: translateX(4px); }
+  .project-card:hover { border-color: rgba(0,212,255,0.4); transform: translateX(4px); }
 
   .project-header {
     display: flex;
@@ -365,9 +366,9 @@
     border-radius: 2px;
     letter-spacing: 0.08em;
   }
-  .meta-tag.ml { background: rgba(26,140,78,0.15); color: #52e08a; border: 1px solid rgba(26,140,78,0.3); }
-  .meta-tag.data { background: rgba(46,204,113,0.1); color: var(--accent); border: 1px solid rgba(46,204,113,0.2); }
-  .meta-tag.auto { background: rgba(82,224,138,0.1); color: var(--accent3); border: 1px solid rgba(82,224,138,0.2); }
+  .meta-tag.ml { background: rgba(123,97,255,0.15); color: var(--accent2); border: 1px solid rgba(123,97,255,0.25); }
+  .meta-tag.data { background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid rgba(0,212,255,0.2); }
+  .meta-tag.auto { background: rgba(0,255,157,0.1); color: var(--accent3); border: 1px solid rgba(0,255,157,0.2); }
   .meta-tag.cv { background: rgba(255,165,0,0.1); color: #ffa500; border: 1px solid rgba(255,165,0,0.2); }
 
   .project-toggle {
@@ -516,7 +517,7 @@
     transition: all 0.25s;
     cursor: none;
   }
-  .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(46,204,113,0.15); }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,212,255,0.15); }
   .contact-link svg { width: 15px; height: 15px; }
 
   /* FOOTER */
@@ -926,9 +927,9 @@
     Currently pursuing my BS in Data Science at ASU (May 2026) and open to internships, project collaborations, and full-time data science roles. If you're building something interesting with data, I'd like to hear about it.
   </p>
   <div class="contact-links">
-    <a href="mailto:hello@cjlaidlaw.com" class="contact-link">
+    <a href="mailto:laidlaw.cory@outlook.com" class="contact-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-      hello@cjlaidlaw.com
+      laidlaw.cory@outlook.com
     </a>
     <a href="https://linkedin.com/in/cory-laidlaw" target="_blank" class="contact-link">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
@@ -938,9 +939,9 @@
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
       GitHub
     </a>
-    <a href="tel:6025294269" class="contact-link">
+    <a href="tel:6028823312" class="contact-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.38h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      (602) 529-4269
+      602-882-3312
     </a>
   </div>
 </section>
@@ -955,10 +956,10 @@
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx - 5 + 'px'; cursor.style.top = my - 5 + 'px'; });
   function animRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
+    rx += (mx - rx - 18) * 0.12;
+    ry += (my - ry - 18) * 0.12;
     ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
     requestAnimationFrame(animRing);
   }
@@ -992,4 +993,10 @@
   });
 
   // Scroll reveal
-  const observer = new IntersectionObserver(entries =>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
