@@ -149,6 +149,10 @@ nav {
   color: var(--accent);
 }
 
+.nav-dropdown.is-current > details > summary {
+  color: var(--accent);
+}
+
 .nav-submenu a {
   display: block;
   padding: 0.65rem 1.25rem;
