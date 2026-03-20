@@ -87,7 +87,12 @@
     color: var(--accent);
     text-decoration: none;
   }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
   .nav-links a {
     color: var(--muted);
     text-decoration: none;
@@ -98,6 +103,51 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--accent); }
+  .nav-links a[aria-current="page"] { color: var(--accent); }
+
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > details { position: relative; }
+  .nav-dropdown summary {
+    list-style: none;
+    cursor: pointer;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-dropdown summary::-webkit-details-marker { display: none; }
+  .nav-dropdown summary::marker { content: ''; }
+  .nav-dropdown summary:hover { color: var(--accent); }
+  .nav-dropdown details[open] > summary { color: var(--accent); }
+  .nav-dropdown summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .nav-submenu {
+    position: absolute;
+    top: calc(100% + 0.65rem);
+    left: 0;
+    min-width: 200px;
+    margin: 0;
+    padding: 0.4rem 0;
+    list-style: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+    z-index: 1001;
+  }
+  .nav-submenu a {
+    display: block;
+    padding: 0.65rem 1.25rem;
+    text-transform: none;
+    letter-spacing: 0.06em;
+  }
+  .nav-submenu a:hover { background: rgba(0,255,157,0.06); }
 
   /* HERO */
   #hero {
@@ -288,144 +338,6 @@
   }
   .skill-tag:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,255,157,0.05); }
 
-  /* PROJECTS */
-  #projects { max-width: 1100px; }
-  .projects-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 2rem;
-  }
-  .projects-header h2 { margin-bottom: 0; }
-
-  .project-filters {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 2.5rem;
-  }
-  .filter-btn {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.4rem 1rem;
-    border-radius: 3px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--muted);
-    cursor: none;
-    transition: all 0.2s;
-  }
-  .filter-btn.active, .filter-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(0,255,157,0.05);
-  }
-
-  .projects-list { display: flex; flex-direction: column; gap: 1.5px; }
-
-  .project-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    overflow: hidden;
-    transition: border-color 0.25s, transform 0.25s;
-  }
-  .project-card:hover { border-color: rgba(0,255,157,0.4); transform: translateX(4px); }
-
-  .project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    cursor: none;
-    user-select: none;
-  }
-  .project-header-left { display: flex; align-items: center; gap: 1.5rem; }
-  .project-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--accent);
-    letter-spacing: 0.1em;
-    width: 2rem;
-    flex-shrink: 0;
-  }
-  .project-name {
-    font-family: 'Syne', sans-serif;
-    font-weight: 600;
-    font-size: 1.05rem;
-    margin-bottom: 0.3rem;
-  }
-  .project-meta-tags { display: flex; gap: 0.4rem; }
-  .meta-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 2px;
-    letter-spacing: 0.08em;
-  }
-  .meta-tag.ml { background: rgba(123,255,97,0.15); color: var(--accent2); border: 1px solid rgba(123,255,97,0.25); }
-  .meta-tag.data { background: rgba(0,255,157,0.1); color: var(--accent); border: 1px solid rgba(0,255,157,0.2); }
-  .meta-tag.auto { background: rgba(0,255,157,0.1); color: var(--accent3); border: 1px solid rgba(0,255,157,0.2); }
-  .meta-tag.cv { background: rgba(255,165,0,0.1); color: #ffa500; border: 1px solid rgba(255,165,0,0.2); }
-
-  .project-toggle {
-    width: 28px; height: 28px;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--muted);
-    font-size: 1rem;
-    transition: all 0.25s;
-    flex-shrink: 0;
-  }
-  .project-card.open .project-toggle { border-color: var(--accent); color: var(--accent); transform: rotate(45deg); }
-
-  .project-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s;
-  }
-  .project-body-inner {
-    padding: 0 2rem 1.8rem 5.5rem;
-    border-top: 1px solid var(--border);
-    padding-top: 1.5rem;
-  }
-  .project-card.open .project-body { max-height: 600px; }
-
-  .project-desc {
-    color: var(--muted);
-    line-height: 1.75;
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-  }
-  .project-bullets { list-style: none; margin-bottom: 1.5rem; }
-  .project-bullets li {
-    color: var(--muted);
-    font-size: 0.9rem;
-    line-height: 1.7;
-    padding-left: 1.2rem;
-    position: relative;
-    margin-bottom: 0.4rem;
-  }
-  .project-bullets li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 0.8rem;
-  }
-  .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .tech-pill {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    padding: 0.25rem 0.65rem;
-    border-radius: 3px;
-    background: var(--surface2);
-    color: var(--muted);
-    border: 1px solid var(--border);
-  }
-
   /* EXPERIENCE */
   .exp-timeline { position: relative; }
   .exp-timeline::before {
@@ -493,31 +405,6 @@
     top: 0.1rem;
   }
 
-  /* CONTACT */
-  #contact {
-    text-align: center;
-    padding: 7rem 3rem;
-    max-width: 700px;
-  }
-  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; }
-  .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.9rem 1.8rem;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    text-decoration: none;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    transition: all 0.25s;
-    cursor: none;
-  }
-  .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,255,157,0.15); }
-  .contact-link svg { width: 15px; height: 15px; }
-
   /* FOOTER */
   footer {
     border-top: 1px solid var(--border);
@@ -547,12 +434,17 @@
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1rem; }
+    .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-submenu {
+      position: static;
+      margin-top: 0.5rem;
+      box-shadow: none;
+      border: 1px solid var(--border);
+    }
     section { padding: 5rem 1.5rem; }
     #hero { padding: 7rem 1.5rem 4rem; }
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .hero-stats { position: static; margin-top: 3rem; justify-content: flex-start; }
-    .project-body-inner { padding-left: 2rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
@@ -564,13 +456,21 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#hero">CL</a>
+  <a class="nav-logo" href="index.html">CL</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="dashboard/">Dashboard</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="index.html" aria-current="page">About</a></li>
+    <li class="nav-dropdown">
+      <details>
+        <summary>Projects</summary>
+        <ul class="nav-submenu">
+          <li><a href="dashboard/">Dashboard Demo</a></li>
+          <li><a href="etl-playground/">ETL Playground</a></li>
+          <li><a href="projects.html#previous-projects">Previous projects</a></li>
+          <li><a href="projects.html">View all</a></li>
+        </ul>
+      </details>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
@@ -586,8 +486,8 @@
     ASU Data Science graduate student combining machine learning, statistical analysis, and 5+ years of infrastructure experience to build real-world data solutions.
   </p>
   <div class="hero-ctas">
-    <a href="#projects" class="btn btn-primary">View Projects</a>
-    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    <a href="projects.html" class="btn btn-primary">View Projects</a>
+    <a href="contact.html" class="btn btn-outline">Get In Touch</a>
   </div>
 
   <div class="hero-stats">
@@ -671,206 +571,9 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" style="max-width:1100px; margin:0 auto;" class="reveal">
-  <div class="section-tag">// 02 — Projects</div>
-  <h2>Featured Work</h2>
-
-  <div class="project-filters">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="ml">Machine Learning</button>
-    <button class="filter-btn" data-filter="data">Data Analysis</button>
-    <button class="filter-btn" data-filter="auto">Automation</button>
-    <button class="filter-btn" data-filter="cv">Computer Vision</button>
-  </div>
-
-  <div class="projects-list">
-
-    <!-- Project 1 -->
-    <div class="project-card" data-tags="ml">
-      <div class="project-header" onclick="toggleProject(this)">
-        <div class="project-header-left">
-          <span class="project-num">01</span>
-          <div class="project-title-row">
-            <div class="project-name">Employee Retention Predictive Model</div>
-            <div class="project-meta-tags">
-              <span class="meta-tag ml">Machine Learning</span>
-              <span class="meta-tag data">Classification</span>
-            </div>
-          </div>
-        </div>
-        <div class="project-toggle">+</div>
-      </div>
-      <div class="project-body">
-        <div class="project-body-inner">
-          <p class="project-desc">Built a classification pipeline to predict employee attrition, identifying the key behavioral and structural drivers of retention risk. Designed for HR teams to intervene proactively before talent loss occurs.</p>
-          <ul class="project-bullets">
-            <li>Engineered a full scikit-learn pipeline with preprocessing, cross-validation, and robust evaluation metrics</li>
-            <li>Applied feature importance analysis to surface the top predictors of employee turnover</li>
-            <li>Evaluated performance using AUC-ROC curves and precision/recall tradeoffs to tune for real-world usability</li>
-            <li>Documented findings in a structured report suitable for both technical and non-technical stakeholders</li>
-          </ul>
-          <div class="project-tech">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">scikit-learn</span>
-            <span class="tech-pill">pandas</span>
-            <span class="tech-pill">Matplotlib</span>
-            <span class="tech-pill">AUC-ROC</span>
-            <span class="tech-pill">Jupyter Notebook</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-card" data-tags="data">
-      <div class="project-header" onclick="toggleProject(this)">
-        <div class="project-header-left">
-          <span class="project-num">02</span>
-          <div class="project-title-row">
-            <div class="project-name">Large-Scale Crime Data Analysis</div>
-            <div class="project-meta-tags">
-              <span class="meta-tag data">Data Analysis</span>
-              <span class="meta-tag data">1M+ Records</span>
-            </div>
-          </div>
-        </div>
-        <div class="project-toggle">+</div>
-      </div>
-      <div class="project-body">
-        <div class="project-body-inner">
-          <p class="project-desc">End-to-end analysis of the LA Crime Dataset (1M+ records), from raw ingestion through statistical analysis to formatted stakeholder reports. Demonstrates scalable data processing and clear visual communication of findings.</p>
-          <ul class="project-bullets">
-            <li>Processed and cleaned a 1M+ record dataset using Python and pandas — handling nulls, inconsistent formats, and outliers</li>
-            <li>Applied statistical analysis and visualization to surface actionable crime trends and geographic patterns</li>
-            <li>Automated the full data cleaning and reporting pipeline, generating Excel/CSV outputs for non-technical audiences</li>
-            <li>Focused on making findings operationally useful, not just analytically interesting</li>
-          </ul>
-          <div class="project-tech">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">pandas</span>
-            <span class="tech-pill">NumPy</span>
-            <span class="tech-pill">Seaborn</span>
-            <span class="tech-pill">Matplotlib</span>
-            <span class="tech-pill">Excel Reporting</span>
-            <span class="tech-pill">Jupyter Notebook</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-card" data-tags="cv">
-      <div class="project-header" onclick="toggleProject(this)">
-        <div class="project-header-left">
-          <span class="project-num">03</span>
-          <div class="project-title-row">
-            <div class="project-name">Image Classification System</div>
-            <div class="project-meta-tags">
-              <span class="meta-tag cv">Computer Vision</span>
-              <span class="meta-tag ml">Transfer Learning</span>
-            </div>
-          </div>
-        </div>
-        <div class="project-toggle">+</div>
-      </div>
-      <div class="project-body">
-        <div class="project-body-inner">
-          <p class="project-desc">Developed a custom image classification model using the FastAI framework and transfer learning, achieving strong accuracy on a limited training dataset. Demonstrates the practical application of modern CV techniques without requiring large-scale data.</p>
-          <ul class="project-bullets">
-            <li>Leveraged transfer learning from pretrained models to achieve high performance with a small custom dataset</li>
-            <li>Trained, validated, and evaluated the model with FastAI's high-level API and learning rate finder</li>
-            <li>Demonstrated that state-of-the-art CV results are achievable outside of large research environments</li>
-          </ul>
-          <div class="project-tech">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">FastAI</span>
-            <span class="tech-pill">PyTorch</span>
-            <span class="tech-pill">Transfer Learning</span>
-            <span class="tech-pill">Computer Vision</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 4 -->
-    <div class="project-card" data-tags="ml">
-      <div class="project-header" onclick="toggleProject(this)">
-        <div class="project-header-left">
-          <span class="project-num">04</span>
-          <div class="project-title-row">
-            <div class="project-name">ML Model Benchmarking Suite</div>
-            <div class="project-meta-tags">
-              <span class="meta-tag ml">Machine Learning</span>
-              <span class="meta-tag data">Benchmarking</span>
-            </div>
-          </div>
-        </div>
-        <div class="project-toggle">+</div>
-      </div>
-      <div class="project-body">
-        <div class="project-body-inner">
-          <p class="project-desc">A systematic comparison of multiple classification and regression models on large-scale datasets, focused on quantifying real performance differences across algorithms rather than picking a winner by intuition.</p>
-          <ul class="project-bullets">
-            <li>Built and compared Logistic Regression, Decision Trees, and Random Forest on datasets exceeding 1M records</li>
-            <li>Applied cross-validation and feature selection to produce reliable, generalizable results</li>
-            <li>Evaluated with multiple metrics — accuracy, precision, recall, F1, AUC — choosing metrics appropriate to each problem type</li>
-            <li>Compiled findings into clear technical reports with visualizations for model comparison</li>
-          </ul>
-          <div class="project-tech">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">scikit-learn</span>
-            <span class="tech-pill">Cross-Validation</span>
-            <span class="tech-pill">Feature Selection</span>
-            <span class="tech-pill">pandas</span>
-            <span class="tech-pill">Matplotlib</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 5 -->
-    <div class="project-card" data-tags="auto">
-      <div class="project-header" onclick="toggleProject(this)">
-        <div class="project-header-left">
-          <span class="project-num">05</span>
-          <div class="project-title-row">
-            <div class="project-name">Firewall Log Analysis Automation</div>
-            <div class="project-meta-tags">
-              <span class="meta-tag auto">Automation</span>
-              <span class="meta-tag data">Security Analytics</span>
-            </div>
-          </div>
-        </div>
-        <div class="project-toggle">+</div>
-      </div>
-      <div class="project-body">
-        <div class="project-body-inner">
-          <p class="project-desc">Built Python-based automation to transform raw, unstructured firewall log data into clean, structured security reports — reducing manual analyst time and improving turnaround for client security teams at Nuvodia.</p>
-          <ul class="project-bullets">
-            <li>Developed scripts to parse, clean, and normalize messy raw log data at scale</li>
-            <li>Automated the pipeline from raw input to formatted client-ready report with no manual steps</li>
-            <li>Reduced manual analysis time significantly, freeing engineers for higher-value investigations</li>
-            <li>Deployed in a production environment — actively used by client security teams</li>
-          </ul>
-          <div class="project-tech">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">pandas</span>
-            <span class="tech-pill">Automation</span>
-            <span class="tech-pill">Log Parsing</span>
-            <span class="tech-pill">Excel/CSV</span>
-            <span class="tech-pill">Data Pipelines</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- EXPERIENCE -->
 <section id="experience" class="reveal">
-  <div class="section-tag">// 03 — Experience</div>
+  <div class="section-tag">// 02 — Experience</div>
   <h2>Career Timeline</h2>
   <div class="exp-timeline">
 
@@ -918,33 +621,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" style="max-width:700px; margin:0 auto; text-align:center;" class="reveal">
-  <div class="section-tag" style="text-align:center; display:block;">// 04 — Contact</div>
-  <h2 style="text-align:center;">Let's Work<br><span style="color:var(--accent)">Together</span></h2>
-  <p style="color:var(--muted); line-height:1.8; font-size:1rem;">
-    Currently pursuing my BS in Data Science at ASU (May 2026) and open to internships, project collaborations, and full-time data science roles. If you're building something interesting with data, I'd like to hear about it.
-  </p>
-  <div class="contact-links">
-    <a href="mailto:hello@cjlaidlaw.com" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-      hello@cjlaidlaw.com
-    </a>
-    <a href="https://linkedin.com/in/cory-laidlaw" target="_blank" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-      LinkedIn
-    </a>
-    <a href="https://github.com/CoryLaidlaw" target="_blank" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-      GitHub
-    </a>
-    <a href="tel:6025294269" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.38h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      (602) 529-4269
-    </a>
-  </div>
-</section>
-
 <footer>
   <span>© 2025 Cory Laidlaw</span>
   <span>Mesa, AZ — Open to Remote</span>
@@ -963,33 +639,6 @@
     requestAnimationFrame(animRing);
   }
   animRing();
-
-  // Project accordion
-  function toggleProject(header) {
-    const card = header.closest('.project-card');
-    const wasOpen = card.classList.contains('open');
-    document.querySelectorAll('.project-card').forEach(c => c.classList.remove('open'));
-    if (!wasOpen) card.classList.add('open');
-  }
-
-  // Filter
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.project-card').forEach(card => {
-        const tags = card.dataset.tags;
-        if (filter === 'all' || tags.includes(filter)) {
-          card.style.display = '';
-          setTimeout(() => card.style.opacity = '1', 10);
-        } else {
-          card.style.opacity = '0';
-          setTimeout(() => card.style.display = 'none', 200);
-        }
-      });
-    });
-  });
 
   // Scroll reveal
   const observer = new IntersectionObserver(entries => {

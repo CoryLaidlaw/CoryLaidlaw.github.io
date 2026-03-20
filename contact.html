@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Cory Laidlaw</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e14;
+    --surface: #111720;
+    --surface2: #192030;
+    --border: #1e2c3f;
+    --accent: #00ff9d;
+    --accent2: #7bff61;
+    --text: #e8f0fe;
+    --muted: #6b7fa3;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cursor {
+    position: fixed;
+    width: 10px; height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.1s, opacity 0.2s;
+    mix-blend-mode: screen;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(0,255,157,0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.18s ease, width 0.2s, height 0.2s;
+  }
+  body:hover .cursor { opacity: 1; }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.5;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(10,14,20,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(30,44,63,0.5);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a[aria-current="page"] { color: var(--accent); }
+
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > details { position: relative; }
+  .nav-dropdown summary {
+    list-style: none;
+    cursor: pointer;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-dropdown summary::-webkit-details-marker { display: none; }
+  .nav-dropdown summary::marker { content: ''; }
+  .nav-dropdown summary:hover { color: var(--accent); }
+  .nav-dropdown details[open] > summary { color: var(--accent); }
+  .nav-dropdown summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .nav-submenu {
+    position: absolute;
+    top: calc(100% + 0.65rem);
+    left: 0;
+    min-width: 200px;
+    margin: 0;
+    padding: 0.4rem 0;
+    list-style: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+    z-index: 1001;
+  }
+  .nav-submenu a {
+    display: block;
+    padding: 0.65rem 1.25rem;
+    text-transform: none;
+    letter-spacing: 0.06em;
+  }
+  .nav-submenu a:hover { background: rgba(0,255,157,0.06); }
+
+  .contact-main {
+    flex: 1;
+    padding: 1.2rem 3rem 4rem;
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 6.5rem;
+    text-align: center;
+  }
+
+  .section-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .contact-main h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+  }
+  .contact-main h1 span { color: var(--accent); }
+
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.8rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    transition: all 0.25s;
+    cursor: none;
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,255,157,0.15); }
+  .contact-link svg { width: 15px; height: 15px; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  footer span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-submenu {
+      position: static;
+      margin-top: 0.5rem;
+      box-shadow: none;
+      border: 1px solid var(--border);
+    }
+    .contact-main { padding: 5.5rem 1.5rem 3rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">CL</a>
+  <ul class="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li class="nav-dropdown">
+      <details>
+        <summary>Projects</summary>
+        <ul class="nav-submenu">
+          <li><a href="dashboard/">Dashboard Demo</a></li>
+          <li><a href="etl-playground/">ETL Playground</a></li>
+          <li><a href="projects.html#previous-projects">Previous projects</a></li>
+          <li><a href="projects.html">View all</a></li>
+        </ul>
+      </details>
+    </li>
+    <li><a href="contact.html" aria-current="page">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="contact-main">
+  <div class="section-tag">// Contact</div>
+  <h1>Let's Work<br><span>Together</span></h1>
+  <div class="contact-links">
+    <a href="mailto:hello@cjlaidlaw.com" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      hello@cjlaidlaw.com
+    </a>
+    <a href="https://linkedin.com/in/cory-laidlaw" target="_blank" rel="noopener noreferrer" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/CoryLaidlaw" target="_blank" rel="noopener noreferrer" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+      GitHub
+    </a>
+    <a href="tel:6025294269" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.38h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      (602) 529-4269
+    </a>
+  </div>
+</main>
+
+<footer>
+  <span>© 2025 Cory Laidlaw</span>
+  <span>Mesa, AZ — Open to Remote</span>
+</footer>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx - 5 + 'px'; cursor.style.top = my - 5 + 'px'; });
+  function animRing() {
+    rx += (mx - rx - 18) * 0.12;
+    ry += (my - ry - 18) * 0.12;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(animRing);
+  }
+  animRing();
+</script>
+</body>
+</html>
