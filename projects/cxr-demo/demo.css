@@ -76,20 +76,34 @@ nav {
 
 .nav-links {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 2rem;
   list-style: none;
   flex-wrap: wrap;
 }
 
+.nav-links > li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links > li > a {
+  display: inline-flex;
+  align-items: center;
+}
+
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links .nav-link-label {
   font-family: 'DM Mono', monospace;
   font-size: 0.78rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  transition: color 0.2s;
+  line-height: 1.2;
 }
 
 .nav-links a:hover,
@@ -102,15 +116,22 @@ nav {
 }
 .nav-dropdown > details {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
+
 .nav-dropdown summary {
+  display: inline-flex;
+  align-items: center;
   list-style: none;
   cursor: pointer;
   color: var(--muted);
-  font-family: 'DM Mono', monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  transition: color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
 }
 .nav-dropdown summary::-webkit-details-marker {
   display: none;
@@ -141,6 +162,8 @@ nav {
 .nav-submenu a {
   display: block;
   padding: 0.65rem 1.25rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
   text-transform: none;
   letter-spacing: 0.06em;
 }
@@ -511,11 +534,5 @@ footer.site-footer a:hover {
   }
   .nav-links {
     gap: 1rem;
-  }
-  .nav-submenu {
-    position: static;
-    margin-top: 0.5rem;
-    box-shadow: none;
-    border: 1px solid var(--border);
   }
 }

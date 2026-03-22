@@ -88,33 +88,46 @@
   }
   .nav-links {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: 2rem;
     list-style: none;
+  }
+  .nav-links > li {
+    display: flex;
+    align-items: center;
   }
   .nav-links a {
     color: var(--muted);
     text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links > li > a {
+    display: inline-flex;
+    align-items: center;
+  }
+  .nav-links .nav-link-label {
     font-family: 'DM Mono', monospace;
     font-size: 0.78rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    transition: color 0.2s;
+    line-height: 1.2;
   }
   .nav-links a:hover { color: var(--accent); }
   .nav-links a[aria-current="page"] { color: var(--accent); }
 
   .nav-dropdown { position: relative; }
-  .nav-dropdown > details { position: relative; }
+  .nav-dropdown > details { position: relative; display: flex; flex-direction: column; align-items: stretch; }
   .nav-dropdown summary {
+    display: inline-flex;
+    align-items: center;
     list-style: none;
     cursor: pointer;
     color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
     transition: color 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
   }
   .nav-dropdown summary::-webkit-details-marker { display: none; }
   .nav-dropdown summary::marker { content: ''; }
@@ -144,6 +157,8 @@
   .nav-submenu a {
     display: block;
     padding: 0.65rem 1.25rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
     text-transform: none;
     letter-spacing: 0.06em;
   }
@@ -379,12 +394,6 @@
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: flex-end; }
-    .nav-submenu {
-      position: static;
-      margin-top: 0.5rem;
-      box-shadow: none;
-      border: 1px solid var(--border);
-    }
     section { padding: 5rem 1.5rem; }
     .project-body-inner { padding-left: 2rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
@@ -400,21 +409,21 @@
 <nav>
   <a class="nav-logo" href="index.html">CL</a>
   <ul class="nav-links">
-    <li><a href="index.html">About</a></li>
+    <li><a href="index.html"><span class="nav-link-label">About</span></a></li>
     <li class="nav-dropdown is-current">
       <details>
-        <summary>Projects</summary>
+        <summary><span class="nav-link-label">Projects</span></summary>
         <ul class="nav-submenu">
-          <li><a href="dashboard/">Dashboard Demo</a></li>
-          <li><a href="etl-playground/">ETL Playground</a></li>
-          <li><a href="model-console/">Model comparison</a></li>
-          <li><a href="projects/cxr-demo/">Pediatric CXR demo</a></li>
+          <li><a href="dashboard/">Statistic Dashboard</a></li>
+          <li><a href="etl-playground/">CSV Cleanup</a></li>
+          <li><a href="model-console/">Model Comparison</a></li>
+          <li><a href="projects/cxr-demo/">Image Analysis</a></li>
           <li><a href="projects.html#previous-projects">Previous projects</a></li>
           <li><a href="projects.html" aria-current="page">View all</a></li>
         </ul>
       </details>
     </li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html"><span class="nav-link-label">Contact</span></a></li>
   </ul>
 </nav>
 
@@ -426,7 +435,7 @@
       <a href="dashboard/" class="demo-card">
         <span class="demo-card-num">01</span>
         <div class="demo-card-body">
-          <div class="demo-card-title">Dashboard Demo</div>
+          <div class="demo-card-title">Statistic Dashboard</div>
           <p class="demo-card-desc">Interactive US power grid mix visualization from public data.</p>
         </div>
         <span class="demo-card-arrow" aria-hidden="true">→</span>
@@ -434,7 +443,7 @@
       <a href="etl-playground/" class="demo-card">
         <span class="demo-card-num">02</span>
         <div class="demo-card-body">
-          <div class="demo-card-title">ETL Playground</div>
+          <div class="demo-card-title">CSV Cleanup</div>
           <p class="demo-card-desc">Client-only CSV cleaning: quality report, deterministic steps, export—no backend.</p>
         </div>
         <span class="demo-card-arrow" aria-hidden="true">→</span>
@@ -442,7 +451,7 @@
       <a href="model-console/" class="demo-card">
         <span class="demo-card-num">03</span>
         <div class="demo-card-body">
-          <div class="demo-card-title">Model comparison</div>
+          <div class="demo-card-title">Model Comparison</div>
           <p class="demo-card-desc">Phishing URL classifiers: precomputed metrics, precision vs recall, and plain-language model guidance—static JSON only.</p>
         </div>
         <span class="demo-card-arrow" aria-hidden="true">→</span>
@@ -450,7 +459,7 @@
       <a href="projects/cxr-demo/" class="demo-card">
         <span class="demo-card-num">04</span>
         <div class="demo-card-body">
-          <div class="demo-card-title">Pediatric CXR demo</div>
+          <div class="demo-card-title">Image Analysis</div>
           <p class="demo-card-desc">NORMAL vs PNEUMONIA on curated pediatric chest X-rays: TensorFlow.js in the browser—samples only, no upload.</p>
         </div>
         <span class="demo-card-arrow" aria-hidden="true">→</span>
