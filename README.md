@@ -63,3 +63,9 @@ This overwrites `data/model-eval-results.json` and `data/model-eval-meta.json` (
 
 Preview: `http://localhost:8080/model-console/`
 
+## Pediatric chest X-ray demo (TensorFlow.js)
+
+Static demo at `projects/cxr-demo/`: binary NORMAL vs PNEUMONIA on curated samples; model and metrics are generated offline. See [`docs/cxr-demo.md`](docs/cxr-demo.md) for dataset attribution, training, and export.
+
+Preview: `http://localhost:8080/projects/cxr-demo/`
+

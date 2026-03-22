@@ -225,7 +225,6 @@
       const models = results.models || [];
       setText('heroTitle', meta.title || 'Model comparison');
       setText('heroLead', meta.one_liner || '');
-      setText('audienceLine', meta.audience ? `Audience: ${meta.audience}` : '');
       setText('stripDataset', meta.dataset_name || '—');
       setText('stripSplit', results.split ? `${results.split.method}, test_size=${results.split.test_size}, seed=${results.split.random_state}` : '—');
       setText('stripRows', results.load ? `${results.load.n_rows_used?.toLocaleString() ?? '—'} rows used (${results.load.n_rows_total_file?.toLocaleString() ?? '—'} in file). Prevalence phishing: ${(results.load.prevalence_phishing * 100).toFixed(2)}%.` : '—');

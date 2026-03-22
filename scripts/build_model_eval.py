@@ -327,7 +327,6 @@ def main() -> None:
     meta = {
         "title": "Phishing URL classifier comparison",
         "one_liner": "Offline-trained scikit-learn pipelines compared on a public URL dataset—static metrics and an explicit precision/recall tradeoff.",
-        "audience": "Hiring managers and practitioners evaluating ML communication and validation discipline on a benchmark (not a security product).",
         "dataset_name": "Phishing site URLs (Kaggle)",
         "dataset_path": "data/mlc-data/phishing_site_urls.csv",
         "source_urls": [
