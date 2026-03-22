@@ -40,3 +40,26 @@ python3 -m http.server 8080
 
 Open `http://localhost:8080/dashboard/` (serving from the repo root avoids `fetch` failures from the `file://` protocol).
 
+## Model comparison console
+
+Static demo at `model-console/`: compares offline-trained scikit-learn pipelines on a phishing URL dataset using precomputed JSON in `data/model-eval-results.json` and methodology in `data/model-eval-meta.json`.
+
+### Regenerating evaluation JSON
+
+Install Python dependencies (build-time only):
+
+```bash
+pip3 install -r requirements-ml.txt
+```
+
+From the repo root:
+
+```bash
+python3 scripts/build_model_eval.py
+# optional: --max-rows 100000  (default 75000 stratified rows; use 0 for full dataset — slow)
+```
+
+This overwrites `data/model-eval-results.json` and `data/model-eval-meta.json` (includes `last_data_build` and a short `results_id` hash).
+
+Preview: `http://localhost:8080/model-console/`
+
