@@ -67,7 +67,63 @@ nav {
   transition: color 0.2s;
 }
 
-.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover,
+.nav-links a[aria-current='page'] {
+  color: var(--accent);
+}
+
+.nav-submenu {
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  left: 0;
+  min-width: 200px;
+  margin: 0;
+  padding: 0.4rem 0;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  z-index: 1001;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+.nav-dropdown > details {
+  position: relative;
+}
+.nav-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+.nav-dropdown summary:hover,
+.nav-dropdown details[open] > summary {
+  color: var(--accent);
+}
+
+.nav-dropdown.is-current > details > summary {
+  color: var(--accent);
+}
+
+.nav-submenu a {
+  display: block;
+  padding: 0.65rem 1.25rem;
+  text-transform: none;
+  letter-spacing: 0.06em;
+}
+
+.nav-submenu a:hover {
+  background: rgba(0, 255, 157, 0.06);
+}
 
 .loading-line {
   padding: 6.5rem 1.5rem 1rem;
@@ -372,4 +428,24 @@ footer.page-foot a:hover { text-decoration: underline; }
   font-size: 0.8rem;
   color: var(--muted);
   margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  nav {
+    padding: 1rem 1.25rem;
+    flex-wrap: wrap;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .nav-submenu {
+    position: static;
+    margin-top: 0.5rem;
+    box-shadow: none;
+    border: 1px solid var(--border);
+  }
+  main {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
