@@ -48,8 +48,9 @@ function formatPct(x) {
   return `${(x * 100).toFixed(1)}%`;
 }
 
-function renderPrediction(pPneumonia) {
+function renderPrediction(pPneumonia, trueLabel) {
   const predLabel = document.getElementById('predLabel');
+  const predMatch = document.getElementById('predMatch');
   const confFill = document.getElementById('confFill');
   const confText = document.getElementById('confText');
 
@@ -61,6 +62,22 @@ function renderPrediction(pPneumonia) {
   predLabel.className = 'prediction ' + (isPneu ? 'pneumonia' : 'normal');
   confFill.style.width = `${Math.min(100, Math.max(0, conf * 100)).toFixed(1)}%`;
   confText.textContent = `${formatPct(conf)}`;
+
+  if (trueLabel === undefined || trueLabel === null || trueLabel === '') {
+    predMatch.textContent = '—';
+    predMatch.className = 'pred-match';
+    predMatch.removeAttribute('aria-label');
+    return;
+  }
+  const correct = label === trueLabel;
+  predMatch.textContent = correct ? 'Correct' : 'Incorrect';
+  predMatch.className = 'pred-match ' + (correct ? 'match-correct' : 'match-wrong');
+  predMatch.setAttribute(
+    'aria-label',
+    correct
+      ? `Prediction matches demo sample label ${trueLabel}`
+      : `Prediction does not match demo sample label ${trueLabel}`
+  );
 }
 
 function renderSampleMeta() {
@@ -86,7 +103,7 @@ async function runCurrent() {
     img.onerror = () => reject(new Error('Failed to load image'));
   });
   const p = predictPneumoniaProb(img);
-  renderPrediction(p);
+  renderPrediction(p, s.trueLabel);
   renderSampleMeta();
   syncThumbs();
 }

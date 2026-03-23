@@ -344,6 +344,22 @@ h1 {
   color: var(--accent);
 }
 
+.pred-match {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.pred-match.match-correct {
+  color: var(--accent2);
+}
+
+.pred-match.match-wrong {
+  color: #e06c75;
+}
+
 .conf-bar {
   height: 6px;
   border-radius: 3px;
