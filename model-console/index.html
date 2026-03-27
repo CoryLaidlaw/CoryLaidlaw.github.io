@@ -6,7 +6,9 @@
   <title>Phishing URL model comparison — Cory Laidlaw</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site-shared.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../css/technical-summary.css">
 </head>
 <body>
   <nav>
@@ -31,7 +33,7 @@
     </ul>
   </nav>
 
-  <main id="top">
+  <main id="top" class="page-stack">
     <p id="loadingLine" class="loading-line">Loading evaluation data…</p>
     <div id="loadErr" hidden>
       <strong>Could not load data.</strong>
@@ -84,7 +86,7 @@
         </div>
       </div>
 
-      <h2 class="section-tag" style="margin-bottom:0.75rem;font-size:0.72rem">// Metrics table</h2>
+      <p class="section-tag" style="margin-bottom:0.75rem">// Metrics table</p>
       <div class="metrics-table-wrap">
         <table class="metrics" id="metricsTable">
           <thead>
@@ -102,7 +104,7 @@
         </table>
       </div>
 
-      <h2 class="section-tag" style="margin-top:2rem;margin-bottom:0.75rem;font-size:0.72rem">// When to pick each model</h2>
+      <p class="section-tag" style="margin-top:2rem;margin-bottom:0.75rem">// When to pick each model</p>
       <div id="modelCards" class="model-cards"></div>
 
       <section class="limitations">
@@ -110,8 +112,37 @@
         <ul id="limitationsList"></ul>
       </section>
 
-      <footer class="page-foot" id="attrBlock"></footer>
-      <footer class="page-foot" style="margin-top:1rem;border:none;padding-top:0">
+      <section class="technical-summary" id="technical-summary" aria-labelledby="technical-summary-title">
+        <p class="technical-summary__label">// Technical summary</p>
+        <h2 class="technical-summary__title" id="technical-summary-title">What this demo uses</h2>
+        <div class="technical-summary__tags" aria-label="Technologies">
+          <span class="technical-summary__tag">JavaScript</span>
+          <span class="technical-summary__tag">Chart.js</span>
+          <span class="technical-summary__tag">Static JSON</span>
+          <span class="technical-summary__tag">Classification metrics</span>
+        </div>
+        <div class="technical-summary__body">
+          <p>
+            This demo compares precomputed phishing-URL model results. It explains what each metric means in plain language so non-technical users can still understand model tradeoffs.
+          </p>
+          <ul>
+            <li><strong>Methodology:</strong> Models were trained and evaluated offline on a labeled URL dataset, then exported as static JSON. The page only visualizes saved results (no live training, no API calls).</li>
+            <li>
+              <strong>Technical terms:</strong>
+              <ul>
+                <li><strong>TF-IDF:</strong> Turns text into weighted numbers so models can read patterns.</li>
+                <li><strong>PR-AUC:</strong> How well a model balances catching threats and avoiding false alarms.</li>
+                <li><strong>ROC-AUC:</strong> Overall ability to separate risky vs safe URLs.</li>
+                <li><strong>Brier score:</strong> How close confidence scores are to reality; lower is better.</li>
+              </ul>
+            </li>
+            <li><strong>Toolsets/technology used:</strong> JavaScript, Chart.js, static JSON, and offline Python/scikit-learn model evaluation.</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer class="page-foot site-footer-base" id="attrBlock"></footer>
+      <footer class="page-foot site-footer-base" style="margin-top:1rem;border:none;padding-top:0">
         <span id="footerVersion"></span>
       </footer>
     </div>

@@ -242,8 +242,7 @@
           .map((u) => `<a href="${u}" target="_blank" rel="noopener noreferrer">${u}</a>`)
           .join(' · ');
         attr.innerHTML = `
-          <p><strong>Methodology:</strong> ${escapeHtml(meta.methodology_note || '')}</p>
-          <p style="margin-top:0.6rem"><strong>License / source:</strong> ${links}</p>
+          <p><strong>License / source:</strong> ${links}</p>
           <p style="margin-top:0.6rem">${escapeHtml(meta.license_note || '')}</p>
         `;
       }

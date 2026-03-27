@@ -75,3 +75,33 @@ Static demo at `projects/report-summarizer/`: the browser loads bundled JSON onl
 
 Preview: `http://localhost:8080/projects/report-summarizer/`
 
+## DICOM study one-call demo
+
+Static demo at `projects/dicom-study-demo/`: one anonymized DICOM study is preprocessed offline, representative slices are sent in a single direct Anthropic multimodal API call, and the site renders only generated static JSON and PNG files.
+
+### Generate study analysis (local only)
+
+1. Copy `.env.example` to `.env` and set `ANTHROPIC_API_KEY` (never commit `.env`).
+2. Install build-time Python dependencies:
+
+```bash
+pip3 install -r requirements-dicom-study-demo.txt
+```
+
+3. Run from the repo root:
+
+```bash
+python3 scripts/generate_dicom_study_demo.py
+```
+
+This writes:
+- `projects/dicom-study-demo/fixtures/study-analysis.json`
+- `projects/dicom-study-demo/fixtures/request-metadata.json`
+- `projects/dicom-study-demo/fixtures/images/*.png`
+
+Cost-control guardrail: the script sends exactly one Anthropic API request per run (`api_calls: 1` is recorded in `request-metadata.json`).
+
+Preview: `http://localhost:8080/projects/dicom-study-demo/`
+
+Safety: demo output is educational only and not medical advice or diagnosis.
+

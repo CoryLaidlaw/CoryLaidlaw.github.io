@@ -6,7 +6,9 @@
   <title>Radiology report summarizer — Cory Laidlaw</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/site-shared.css">
   <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="../../css/technical-summary.css">
 </head>
 <body>
   <nav>
@@ -38,7 +40,7 @@
     <p style="margin-top:0.5rem;font-size:0.85rem;color:var(--muted)">Serve the site over HTTP (e.g. from repo root: <code>python3 -m http.server 8080</code>) then open <code>/projects/report-summarizer/</code></p>
   </div>
 
-  <main id="app" hidden>
+  <main id="app" class="page-stack" hidden>
     <p class="section-tag">// Anthropic API · Pre-generated summaries</p>
     <h1>Radiology report summarizer</h1>
     <p class="lead">This demo showcases outputs from running synthetic radiology reports through the <strong>Anthropic API</strong> (offline, via a local script)—each report is expanded into four audience-specific summaries: an impression-style summary, key findings, follow-up recommendations, and a plain-language patient version. The live site only loads static JSON; nothing is sent to Anthropic from your browser.</p>
@@ -76,7 +78,35 @@
       </div>
     </div>
 
-    <footer class="site-footer">
+    <section class="technical-summary" id="technical-summary" aria-labelledby="technical-summary-title">
+      <p class="technical-summary__label">// Technical summary</p>
+      <h2 class="technical-summary__title" id="technical-summary-title">What this demo uses</h2>
+      <div class="technical-summary__tags" aria-label="Technologies">
+        <span class="technical-summary__tag">JavaScript</span>
+        <span class="technical-summary__tag">Static JSON</span>
+        <span class="technical-summary__tag">Content design</span>
+        <span class="technical-summary__tag">Python (offline)</span>
+      </div>
+      <div class="technical-summary__body">
+        <p>
+          This demo shows pre-generated report summaries for different audiences, designed to make the same medical content easier to understand at different reading levels.
+        </p>
+        <ul>
+          <li><strong>Methodology:</strong> Synthetic reports are summarized offline, saved as static JSON, and then rendered by the site. The browser only reads saved outputs; no live model calls happen in the page.</li>
+          <li>
+            <strong>Technical terms:</strong>
+            <ul>
+              <li><strong>LLM:</strong> Large Language Model, an AI system that generates text.</li>
+              <li><strong>Prompt:</strong> Instructions given to the model.</li>
+              <li><strong>Static JSON:</strong> A pre-saved data file served as-is.</li>
+            </ul>
+          </li>
+          <li><strong>Toolsets/technology used:</strong> JavaScript, static JSON rendering, and offline Python scripts with the Anthropic API.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="site-footer site-footer-base">
       <p>Illustration only. Summaries are synthetic and do not constitute medical advice.</p>
     </footer>
   </main>

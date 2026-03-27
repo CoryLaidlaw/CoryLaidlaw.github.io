@@ -6,7 +6,9 @@
   <title>Pediatric chest X-ray demo — Cory Laidlaw</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/site-shared.css">
   <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="../../css/technical-summary.css">
 </head>
 <body>
   <nav>
@@ -38,7 +40,7 @@
     <p style="margin-top:0.5rem;font-size:0.85rem;color:var(--muted)">Serve the site over HTTP (e.g. from repo root: <code>python3 -m http.server 8080</code>) then open <code>/projects/cxr-demo/</code></p>
   </div>
 
-  <main id="app" hidden>
+  <main id="app" class="page-stack" hidden>
     <p class="section-tag">// ML · Browser inference (samples)</p>
     <h1>Pediatric chest X-ray: NORMAL vs PNEUMONIA</h1>
     <p class="lead">Educational portfolio demo: a small MobileNetV2-based classifier runs entirely in your browser on curated public-domain samples. Not for clinical use.</p>
@@ -105,7 +107,35 @@
       </div>
     </details>
 
-    <footer class="site-footer">
+    <section class="technical-summary" id="technical-summary" aria-labelledby="technical-summary-title">
+      <p class="technical-summary__label">// Technical summary</p>
+      <h2 class="technical-summary__title" id="technical-summary-title">What this demo uses</h2>
+      <div class="technical-summary__tags" aria-label="Technologies">
+        <span class="technical-summary__tag">TensorFlow.js</span>
+        <span class="technical-summary__tag">JavaScript</span>
+        <span class="technical-summary__tag">Browser inference</span>
+        <span class="technical-summary__tag">CNN</span>
+      </div>
+      <div class="technical-summary__body">
+        <p>
+          This demo runs a small image-classification model in the browser on sample chest X-rays to show how medical AI interfaces can be presented responsibly.
+        </p>
+        <ul>
+          <li><strong>Methodology:</strong> A pre-trained binary model is converted for TensorFlow.js and loaded locally. Inference is run only on bundled sample images, with transparent test metrics shown in the model card.</li>
+          <li>
+            <strong>Technical terms:</strong>
+            <ul>
+              <li><strong>CNN:</strong> Convolutional Neural Network, a model type for images.</li>
+              <li><strong>Inference:</strong> The model making a prediction.</li>
+              <li><strong>Confusion matrix:</strong> A table showing correct vs incorrect predictions by class.</li>
+            </ul>
+          </li>
+          <li><strong>Toolsets/technology used:</strong> TensorFlow.js, JavaScript, browser-based model inference, and static sample assets.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="site-footer site-footer-base">
       <p><strong>Dataset:</strong> Pediatric Chest X-Ray Pneumonia — Balanced Dataset (Kaggle). License: CC0: Public Domain (verify on the <a href="https://www.kaggle.com/datasets/yusufmurtaza01/chest-xray-pneumonia-balanced-dataset" rel="noopener noreferrer">dataset page</a>).</p>
     </footer>
   </main>

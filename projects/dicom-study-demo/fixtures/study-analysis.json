@@ -1,0 +1,702 @@
+{
+  "disclaimer": "Educational portfolio demo only. This output is generated from anonymized sample DICOM data and is not medical advice, not a diagnosis, and not a substitute for licensed clinical review.",
+  "generated_at": "2026-03-27T03:26:39.612539+00:00",
+  "study_id": "DICOM_Study",
+  "series_count": 6,
+  "selected_slice_count": 18,
+  "analysis_slice_count": 60,
+  "series_metadata": [
+    {
+      "series_id": "series-000001",
+      "series_instance_uid": "1.2.826.0.1.3680043.8.1055.1.20111103111148288.94019146.71622702",
+      "study_instance_uid": "1.2.826.0.1.3680043.8.1055.1.20111103111148288.98361414.79379639",
+      "modality": "MR",
+      "series_description": "AX.  FSE PD",
+      "protocol_name": "324-58-2995/6",
+      "body_part_examined": "",
+      "image_type": [
+        "ORIGINAL",
+        "PRIMARY",
+        "OTHER"
+      ],
+      "orientation": [
+        "0.999841",
+        "0.000366209",
+        "0.0178227",
+        "-0.000427244",
+        "0.999995",
+        "0.00326545"
+      ],
+      "rows": 512,
+      "columns": 512,
+      "pixel_spacing": [
+        "0.332",
+        "0.332"
+      ],
+      "slice_thickness": 4.0,
+      "spacing_between_slices": 4.5,
+      "window_center": 2572.0,
+      "window_width": 5145.0,
+      "rescale_slope": null,
+      "rescale_intercept": null,
+      "photometric_interpretation": "MONOCHROME2",
+      "instance_count": 24
+    },
+    {
+      "series_id": "series-000002",
+      "series_instance_uid": "1.2.826.0.1.3680043.8.1055.1.20111103111153403.39691445.89792679",
+      "study_instance_uid": "1.2.826.0.1.3680043.8.1055.1.20111103111148288.98361414.79379639",
+      "modality": "MR",
+      "series_description": "Cor FSE PD",
+      "protocol_name": "324-58-2995/5",
+      "body_part_examined": "",
+      "image_type": [
+        "ORIGINAL",
+        "PRIMARY",
+        "OTHER"
+      ],
+      "orientation": [
+        "0.999993",
+        "-0.00369272",
+        "0",
+        "-0",
+        "-0",
+        "-1"
+      ],
+      "rows": 512,
+      "columns": 512,
+      "pixel_spacing": [
+        "0.293",
+        "0.293"
+      ],
+      "slice_thickness": 4.0,
+      "spacing_between_slices": 4.5,
+      "window_center": 1936.0,
+      "window_width": 3873.0,
+      "rescale_slope": null,
+      "rescale_intercept": null,
+      "photometric_interpretation": "MONOCHROME2",
+      "instance_count": 20
+    },
+    {
+      "series_id": "series-000003",
+      "series_instance_uid": "1.2.826.0.1.3680043.8.1055.1.20111103111157341.71737845.59538788",
+      "study_instance_uid": "1.2.826.0.1.3680043.8.1055.1.20111103111148288.98361414.79379639",
+      "modality": "MR",
+      "series_description": "Cor FSE T1",
+      "protocol_name": "324-58-2995/8",
+      "body_part_examined": "",
+      "image_type": [
+        "ORIGINAL",
+        "PRIMARY",
+        "OTHER"
+      ],
+      "orientation": [
+        "0.999993",
+        "-0.00369272",
+        "0",
+        "-0",
+        "-0",
+        "-1"
+      ],
+      "rows": 512,
+      "columns": 512,
+      "pixel_spacing": [
+        "0.293",
+        "0.293"
+      ],
+      "slice_thickness": 4.0,
+      "spacing_between_slices": 4.5,
+      "window_center": 3802.0,
+      "window_width": 7604.0,
+      "rescale_slope": null,
+      "rescale_intercept": null,
+      "photometric_interpretation": "MONOCHROME2",
+      "instance_count": 20
+    },
+    {
+      "series_id": "series-000004",
+      "series_instance_uid": "1.2.826.0.1.3680043.8.1055.1.20111103111201370.72665630.67534267",
+      "study_instance_uid": "1.2.826.0.1.3680043.8.1055.1.20111103111148288.98361414.79379639",
+      "modality": "MR",
+      "series_description": "Loc (Right)",
+      "protocol_name": "",
+      "body_part_examined": "",
+      "image_type": [
+        "ORIGINAL",
+        "PRIMARY",
+        "OTHER"
+      ],
+      "orientation": [
+        "1",
+        "-0",
+        "0",
+        "-0",
+        "1",
+        "0"
+      ],
+      "rows": 256,
+      "columns": 256,
+      "pixel_spacing": [
+        "0.8594",
+        "0.8594"
+      ],
+      "slice_thickness": 8.0,
+      "spacing_between_slices": 10.0,
+      "window_center": 1113.0,
+      "window_width": 2226.0,
+      "rescale_slope": null,
+      "rescale_intercept": null,
+      "photometric_interpretation": "MONOCHROME2",
+      "instance_count": 27
+    },
+    {
+      "series_id": "series-000005",
+      "series_instance_uid": "1.2.826.0.1.3680043.8.1055.1.20111103111204584.92619625.78204558",
+      "study_instance_uid": "1.2.826.0.1.3680043.8.1055.1.20111103111148288.98361414.79379639",
+      "modality": "MR",
+      "series_description": "Sag FRSE PD FS",
+      "protocol_name": "324-58-2995/4",
+      "body_part_examined": "",
+      "image_type": [
+        "ORIGINAL",
+        "PRIMARY",
+        "OTHER"
+      ],
+      "orientation": [
+        "-0",
+        "1",
+        "0",
+        "-0",
+        "-0",
+        "-1"
+      ],
+      "rows": 512,
+      "columns": 512,
+      "pixel_spacing": [
+        "0.293",
+        "0.293"
+      ],
+      "slice_thickness": 4.0,
+      "spacing_between_slices": 4.5,
+      "window_center": 2002.0,
+      "window_width": 4005.0,
+      "rescale_slope": null,
+      "rescale_intercept": null,
+      "photometric_interpretation": "MONOCHROME2",
+      "instance_count": 22
+    },
+    {
+      "series_id": "series-000006",
+      "series_instance_uid": "1.2.826.0.1.3680043.8.1055.1.20111103111208937.49685336.24517034",
+      "study_instance_uid": "1.2.826.0.1.3680043.8.1055.1.20111103111148288.98361414.79379639",
+      "modality": "MR",
+      "series_description": "Sag FSE T2",
+      "protocol_name": "324-58-2995/7",
+      "body_part_examined": "",
+      "image_type": [
+        "ORIGINAL",
+        "PRIMARY",
+        "OTHER"
+      ],
+      "orientation": [
+        "-0",
+        "1",
+        "0",
+        "-0",
+        "-0",
+        "-1"
+      ],
+      "rows": 512,
+      "columns": 512,
+      "pixel_spacing": [
+        "0.293",
+        "0.293"
+      ],
+      "slice_thickness": 4.0,
+      "spacing_between_slices": 4.5,
+      "window_center": 2506.0,
+      "window_width": 5013.0,
+      "rescale_slope": null,
+      "rescale_intercept": null,
+      "photometric_interpretation": "MONOCHROME2",
+      "instance_count": 22
+    }
+  ],
+  "selected_slices": [
+    {
+      "series_id": "series-000001",
+      "slice_label": "start",
+      "instance_number": 1,
+      "source_file": "data/DICOM_Study/series-000001/image-000001.dcm",
+      "image_path": "fixtures/images/series-000001_start_000.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000001",
+      "slice_label": "middle",
+      "instance_number": 13,
+      "source_file": "data/DICOM_Study/series-000001/image-000013.dcm",
+      "image_path": "fixtures/images/series-000001_middle_012.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000001",
+      "slice_label": "end",
+      "instance_number": 24,
+      "source_file": "data/DICOM_Study/series-000001/image-000024.dcm",
+      "image_path": "fixtures/images/series-000001_end_023.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000002",
+      "slice_label": "start",
+      "instance_number": 1,
+      "source_file": "data/DICOM_Study/series-000002/image-000001.dcm",
+      "image_path": "fixtures/images/series-000002_start_000.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000002",
+      "slice_label": "middle",
+      "instance_number": 11,
+      "source_file": "data/DICOM_Study/series-000002/image-000011.dcm",
+      "image_path": "fixtures/images/series-000002_middle_010.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000002",
+      "slice_label": "end",
+      "instance_number": 20,
+      "source_file": "data/DICOM_Study/series-000002/image-000020.dcm",
+      "image_path": "fixtures/images/series-000002_end_019.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000003",
+      "slice_label": "start",
+      "instance_number": 1,
+      "source_file": "data/DICOM_Study/series-000003/image-000001.dcm",
+      "image_path": "fixtures/images/series-000003_start_000.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000003",
+      "slice_label": "middle",
+      "instance_number": 11,
+      "source_file": "data/DICOM_Study/series-000003/image-000011.dcm",
+      "image_path": "fixtures/images/series-000003_middle_010.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000003",
+      "slice_label": "end",
+      "instance_number": 20,
+      "source_file": "data/DICOM_Study/series-000003/image-000020.dcm",
+      "image_path": "fixtures/images/series-000003_end_019.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000004",
+      "slice_label": "start",
+      "instance_number": 1,
+      "source_file": "data/DICOM_Study/series-000004/image-000001.dcm",
+      "image_path": "fixtures/images/series-000004_start_000.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "series_id": "series-000004",
+      "slice_label": "middle",
+      "instance_number": 14,
+      "source_file": "data/DICOM_Study/series-000004/image-000014.dcm",
+      "image_path": "fixtures/images/series-000004_middle_013.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "series_id": "series-000004",
+      "slice_label": "end",
+      "instance_number": 27,
+      "source_file": "data/DICOM_Study/series-000004/image-000027.dcm",
+      "image_path": "fixtures/images/series-000004_end_026.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "series_id": "series-000005",
+      "slice_label": "start",
+      "instance_number": 1,
+      "source_file": "data/DICOM_Study/series-000005/image-000001.dcm",
+      "image_path": "fixtures/images/series-000005_start_000.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000005",
+      "slice_label": "middle",
+      "instance_number": 12,
+      "source_file": "data/DICOM_Study/series-000005/image-000012.dcm",
+      "image_path": "fixtures/images/series-000005_middle_011.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000005",
+      "slice_label": "end",
+      "instance_number": 22,
+      "source_file": "data/DICOM_Study/series-000005/image-000022.dcm",
+      "image_path": "fixtures/images/series-000005_end_021.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000006",
+      "slice_label": "start",
+      "instance_number": 1,
+      "source_file": "data/DICOM_Study/series-000006/image-000001.dcm",
+      "image_path": "fixtures/images/series-000006_start_000.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000006",
+      "slice_label": "middle",
+      "instance_number": 12,
+      "source_file": "data/DICOM_Study/series-000006/image-000012.dcm",
+      "image_path": "fixtures/images/series-000006_middle_011.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "series_id": "series-000006",
+      "slice_label": "end",
+      "instance_number": 22,
+      "source_file": "data/DICOM_Study/series-000006/image-000022.dcm",
+      "image_path": "fixtures/images/series-000006_end_021.png",
+      "width": 512,
+      "height": 512
+    }
+  ],
+  "analysis": {
+    "study_id": "DICOM_Study",
+    "series_count": 6,
+    "series_analysis": [
+      {
+        "series_id": "series-000001",
+        "likely_series_type": "Axial Fast Spin Echo Proton Density (FSE PD) MRI - Knee",
+        "series_type_confidence": 0.97,
+        "rationale": "Series description explicitly states 'AX. FSE PD'. Orientation cosines confirm near-axial plane. Pixel spacing of 0.332mm and 512x512 matrix indicate high-resolution acquisition. PD weighting produces intermediate signal in soft tissues with good contrast between cartilage, menisci, and fluid. 24 instances cover the knee from suprapatellar region through proximal tibia.",
+        "visual_description": "Axial cross-sections through the right knee joint progressing from suprapatellar region inferiorly through the tibial plateau. Early slices show the patella and trochlear groove with surrounding quadriceps and patellar tendons. Mid slices reveal the femoral condyles, intercondylar notch, cruciate ligaments in cross-section, and menisci. Distal slices show the tibial plateau with meniscal bodies and popliteal neurovascular structures posteriorly. Intermediate signal intensity of articular cartilage is visible. Small round hypointense foci are noted laterally consistent with marker pellets or skin markers. Joint fluid appears relatively dark on PD weighting.",
+        "possible_findings": [
+          {
+            "finding": "Joint effusion (mild to moderate)",
+            "confidence": 0.6,
+            "evidence": "Intermediate-to-bright signal in the suprapatellar bursa and joint recesses visible on axial PD images; fluid appears slightly brighter than muscle on PD weighting."
+          },
+          {
+            "finding": "Meniscal signal alteration (possible medial meniscus)",
+            "confidence": 0.45,
+            "evidence": "Heterogeneous signal within the medial meniscus region on mid-axial slices; difficult to characterize definitively on axial plane alone."
+          },
+          {
+            "finding": "Articular cartilage thinning or irregularity (medial compartment)",
+            "confidence": 0.4,
+            "evidence": "Apparent asymmetry in cartilage thickness between medial and lateral compartments on axial images; intermediate confidence due to axial plane limitations for cartilage assessment."
+          },
+          {
+            "finding": "No acute osseous fracture identified",
+            "confidence": 0.75,
+            "evidence": "Cortical margins of femoral condyles and patella appear intact on axial slices without obvious cortical disruption."
+          }
+        ],
+        "uncertainties": [
+          "Axial plane is suboptimal for meniscal tear characterization; coronal and sagittal planes are preferred.",
+          "No fat suppression in this series limits detection of bone marrow edema.",
+          "Skin markers visible laterally may obscure adjacent soft tissue detail.",
+          "Cannot confirm laterality (right vs left) from metadata alone; series label 'Loc (Right)' in series-000004 suggests right knee."
+        ],
+        "concise_summary": "Axial FSE Proton Density MRI of the right knee spanning the suprapatellar region through the tibial plateau, demonstrating intact cortical margins and visible cruciate ligaments, menisci, and articular cartilage. Mild-to-moderate joint effusion is a possible finding (confidence 0.60); meniscal signal alteration in the medial meniscus and medial compartment cartilage irregularity are suggested but remain low-confidence observations best assessed on coronal and sagittal planes."
+      },
+      {
+        "series_id": "series-000002",
+        "likely_series_type": "Coronal Fast Spin Echo Proton Density (FSE PD) MRI - Knee",
+        "series_type_confidence": 0.97,
+        "rationale": "Series description states 'Cor FSE PD'. Orientation cosines confirm coronal plane (third cosine component is -1, indicating superior-inferior direction). Pixel spacing 0.293mm with 512x512 matrix provides high spatial resolution. PD weighting gives good soft tissue contrast for menisci and ligaments. 20 instances span anterior to posterior knee.",
+        "visual_description": "Coronal sections through the knee from anterior (patellar tendon level) to posterior (popliteal fossa). Central slices show the femoral condyles, tibial plateau, medial and lateral menisci as low-signal triangular structures, collateral ligaments, and the intercondylar eminence. The ACL and PCL are partially visible in central coronal slices. Articular cartilage is visible as intermediate signal lining the condyles and tibial plateau. Periarticular soft tissues including the iliotibial band laterally and pes anserinus medially are visible. Subchondral bone appears as low signal. Posterior slices show the popliteal vessels and gastrocnemius muscle origins.",
+        "possible_findings": [
+          {
+            "finding": "Medial meniscus signal alteration or possible tear",
+            "confidence": 0.5,
+            "evidence": "Heterogeneous or increased signal within the medial meniscus on coronal PD images; the medial meniscus appears to have irregular morphology on several central coronal slices."
+          },
+          {
+            "finding": "Mild medial joint space narrowing",
+            "confidence": 0.45,
+            "evidence": "Apparent reduction in medial compartment joint space height compared to lateral compartment on coronal images; may reflect cartilage loss or positioning."
+          },
+          {
+            "finding": "Lateral meniscus appears relatively intact",
+            "confidence": 0.55,
+            "evidence": "Lateral meniscus demonstrates homogeneous low signal with preserved triangular morphology on coronal slices."
+          },
+          {
+            "finding": "Collateral ligaments appear intact",
+            "confidence": 0.6,
+            "evidence": "MCL and LCL demonstrate continuous low-signal fibrous bands without obvious discontinuity on coronal images."
+          },
+          {
+            "finding": "Joint effusion (mild)",
+            "confidence": 0.55,
+            "evidence": "Intermediate signal fluid visible in the joint recesses on coronal PD images."
+          }
+        ],
+        "uncertainties": [
+          "PD without fat suppression limits sensitivity for bone marrow edema and subtle cartilage lesions.",
+          "Meniscal tear characterization requires correlation with sagittal sequences.",
+          "Partial volume effects at 4mm slice thickness may obscure small meniscal tears.",
+          "Positioning and patient habitus may affect apparent joint space measurements."
+        ],
+        "concise_summary": "Coronal FSE PD MRI of the knee demonstrates possible medial meniscus signal alteration or tear with irregular morphology (confidence 0.50), along with mild medial joint space narrowing that may reflect cartilage loss (confidence 0.45); collateral ligaments appear intact and a mild joint effusion may be present. Meniscal tear characterization should be correlated with sagittal sequences, as PD without fat suppression limits full assessment."
+      },
+      {
+        "series_id": "series-000003",
+        "likely_series_type": "Coronal Fast Spin Echo T1 (FSE T1) MRI - Knee",
+        "series_type_confidence": 0.97,
+        "rationale": "Series description states 'Cor FSE T1'. Same coronal orientation as series-000002 with identical pixel spacing and slice thickness. T1 weighting produces bright fat signal, intermediate muscle signal, and dark fluid/cortical bone. Higher window center (3802) and width (7604) compared to PD series is consistent with T1 contrast characteristics. 20 instances.",
+        "visual_description": "Coronal T1-weighted sections through the knee at the same anatomical levels as series-000002. Fat-containing structures (subcutaneous fat, bone marrow) appear bright. Muscles show intermediate signal. Cortical bone and ligaments appear dark. Articular cartilage shows intermediate T1 signal. Menisci appear as dark triangular structures. The medullary cavities of the femur and tibia show bright fatty marrow signal. Periarticular fat pads are well-delineated. Joint fluid appears dark on T1.",
+        "possible_findings": [
+          {
+            "finding": "Normal fatty bone marrow signal bilaterally",
+            "confidence": 0.75,
+            "evidence": "Bright T1 signal in femoral and tibial medullary cavities consistent with normal fatty marrow without focal replacement."
+          },
+          {
+            "finding": "Possible focal marrow signal alteration (subchondral region)",
+            "confidence": 0.35,
+            "evidence": "Subtle heterogeneity in subchondral marrow signal in the medial femoral condyle region; low confidence due to T1 alone without fat-suppressed sequences."
+          },
+          {
+            "finding": "Menisci appear low signal (normal T1 appearance)",
+            "confidence": 0.7,
+            "evidence": "Both menisci demonstrate uniformly low T1 signal consistent with fibrocartilage; no intrinsic T1 bright signal to suggest mucoid degeneration or fat."
+          },
+          {
+            "finding": "No large soft tissue mass identified",
+            "confidence": 0.8,
+            "evidence": "No focal mass lesion with abnormal T1 signal characteristics identified in the periarticular soft tissues."
+          }
+        ],
+        "uncertainties": [
+          "T1 alone is insufficient to characterize marrow edema (requires STIR or fat-suppressed T2/PD).",
+          "Subtle cartilage lesions are better assessed on PD or T2 sequences.",
+          "Cannot exclude ligamentous injury on T1 alone without fat suppression.",
+          "Slice thickness of 4mm with 0.5mm gap may miss small lesions."
+        ],
+        "concise_summary": "Coronal T1-weighted knee MRI demonstrating normal fatty marrow signal bilaterally (confidence 0.75) with uniformly low-signal menisci consistent with intact fibrocartilage (confidence 0.70); no large periarticular soft tissue mass identified. A subtle subchondral marrow signal heterogeneity in the medial femoral condyle is noted at low confidence (0.35) and would require fat-suppressed sequences for meaningful characterization."
+      },
+      {
+        "series_id": "series-000004",
+        "likely_series_type": "Localizer / Scout MRI - Knee (Right)",
+        "series_type_confidence": 0.95,
+        "rationale": "Series description states 'Loc (Right)' indicating a localizer or scout sequence for the right knee. Lower resolution (256x256 matrix, 0.8594mm pixel spacing, 8mm slice thickness with 10mm spacing) is characteristic of a rapid localizer acquisition. 27 instances with axial orientation cosines suggest a multi-slice localizer covering a large volume. Used for planning subsequent diagnostic sequences.",
+        "visual_description": "Low-resolution axial and multi-planar localizer images of the right knee. Images show the overall anatomy of the knee joint including the femoral condyles, patella, tibial plateau, and surrounding soft tissues at reduced spatial resolution. The images serve as anatomical reference for planning the diagnostic series. Some slices appear to include coronal and sagittal scout views. Bone cortex, joint space, and major soft tissue compartments are identifiable but fine detail is limited.",
+        "possible_findings": [
+          {
+            "finding": "Overall knee anatomy appears grossly intact on localizer",
+            "confidence": 0.6,
+            "evidence": "No gross deformity, fracture displacement, or large mass visible on low-resolution scout images."
+          },
+          {
+            "finding": "Possible joint effusion suggested by joint space appearance",
+            "confidence": 0.4,
+            "evidence": "Slightly increased signal in joint recesses on localizer images; low confidence due to limited resolution."
+          }
+        ],
+        "uncertainties": [
+          "Localizer images have insufficient resolution for diagnostic assessment of internal joint structures.",
+          "Slice thickness of 8mm with 10mm spacing results in significant partial volume averaging.",
+          "Sequence type (T1, T2, PD) of localizer is not specified in metadata.",
+          "Cannot reliably assess menisci, ligaments, or cartilage on localizer images."
+        ],
+        "concise_summary": "Right knee localizer/scout MRI providing multi-planar anatomical reference for diagnostic series planning, with gross knee anatomy appearing intact on low-resolution images. A possible joint effusion is suggested by signal in the joint recesses, though this is low-confidence and would require diagnostic sequences for confirmation."
+      },
+      {
+        "series_id": "series-000005",
+        "likely_series_type": "Sagittal Fast Spin Echo Proton Density Fat-Saturated (FRSE PD FS) MRI - Knee",
+        "series_type_confidence": 0.96,
+        "rationale": "Series description states 'Sag FRSE PD FS' indicating sagittal fast/turbo spin echo PD with fat saturation. Orientation cosines confirm sagittal plane. High resolution (512x512, 0.293mm pixel spacing). Fat suppression suppresses subcutaneous and marrow fat, making fluid, edema, and cartilage more conspicuous. 22 instances cover medial to lateral knee. This is a key sequence for ACL/PCL and meniscal assessment.",
+        "visual_description": "Sagittal fat-suppressed PD images through the right knee from medial to lateral. Fat signal is suppressed making fluid appear bright and edema conspicuous. The ACL and PCL are visible as low-signal band structures in the intercondylar notch. Menisci appear as dark triangular structures with the anterior and posterior horns visible on appropriate slices. Articular cartilage appears as intermediate-to-bright signal against the dark subchondral bone. The patellar tendon, quadriceps tendon, and Hoffa fat pad (now suppressed) are visible. Bone marrow edema if present would appear as bright signal. Popliteal vessels are visible posteriorly. Several slices show a focal bright signal focus near the posterior aspect of the knee.",
+        "possible_findings": [
+          {
+            "finding": "Possible ACL signal alteration or partial tear",
+            "confidence": 0.45,
+            "evidence": "The ACL region demonstrates heterogeneous signal on mid-sagittal fat-suppressed PD slices; the normal ACL should appear as a uniformly low-signal band; increased signal may indicate sprain or partial tear."
+          },
+          {
+            "finding": "Posterior horn medial meniscus tear (possible)",
+            "confidence": 0.5,
+            "evidence": "Increased intrameniscal signal reaching the articular surface in the posterior horn of the medial meniscus on sagittal fat-suppressed PD images; morphological irregularity noted."
+          },
+          {
+            "finding": "Bone marrow edema (possible, subchondral)",
+            "confidence": 0.45,
+            "evidence": "Focal areas of increased signal in subchondral bone on fat-suppressed PD images in the femoral condyle region; fat suppression makes edema more conspicuous."
+          },
+          {
+            "finding": "Hoffa fat pad edema or impingement (possible)",
+            "confidence": 0.4,
+            "evidence": "Increased signal within the infrapatellar fat pad region on fat-suppressed images; may indicate Hoffa syndrome or reactive change."
+          },
+          {
+            "finding": "Focal bright signal focus posterior to knee (possible ganglion cyst or popliteal cyst)",
+            "confidence": 0.45,
+            "evidence": "A small focal bright signal structure is visible in the posterior knee region on fat-suppressed PD images; fluid-equivalent signal suggests cystic structure."
+          },
+          {
+            "finding": "Patellar tendon appears intact",
+            "confidence": 0.65,
+            "evidence": "Patellar tendon demonstrates continuous low-signal fibrous band without discontinuity on sagittal images."
+          }
+        ],
+        "uncertainties": [
+          "Fat saturation homogeneity may vary across the field of view, potentially creating artifactual signal changes.",
+          "ACL assessment requires correlation with coronal and axial sequences.",
+          "Meniscal tear grading requires correlation with all planes.",
+          "Cannot distinguish between partial and complete ligamentous tears without clinical correlation.",
+          "Small field artifacts near the edges of fat suppression may mimic pathology."
+        ],
+        "concise_summary": "Sagittal fat-suppressed PD MRI of the right knee demonstrates several areas of interest, with the most notable being possible posterior horn medial meniscus tear (confidence ~50%) showing intrameniscal signal reaching the articular surface, and a posterior knee focal fluid-signal structure consistent with a ganglion or popliteal cyst (confidence ~45%). Additional low-to-moderate confidence findings include ACL signal heterogeneity, subchondral bone marrow edema in the femoral condyle, and infrapatellar fat pad signal change; the patellar tendon appears intact (confidence ~65%)."
+      },
+      {
+        "series_id": "series-000006",
+        "likely_series_type": "Sagittal Fast Spin Echo T2 (FSE T2) MRI - Knee",
+        "series_type_confidence": 0.97,
+        "rationale": "Series description states 'Sag FSE T2'. Same sagittal orientation as series-000005 with identical pixel spacing and slice thickness. T2 weighting makes fluid appear bright (high signal) and provides excellent contrast for joint effusion, meniscal tears, ligament injuries, and cartilage lesions. No fat suppression noted in description. 22 instances.",
+        "visual_description": "Sagittal T2-weighted images through the right knee from medial to lateral. Joint fluid appears bright (high T2 signal). The ACL and PCL are visible as low-signal structures in the intercondylar notch. Menisci appear as dark triangular structures. Articular cartilage shows intermediate T2 signal. The patellar tendon and quadriceps tendon appear as low-signal bands. Bone marrow fat appears bright on T2 without fat suppression. The posterior cruciate ligament appears as a curved low-signal band. Popliteal vessels show flow-related signal. Subcutaneous fat is bright. The images show good delineation of the joint space and periarticular structures. Some slices demonstrate bright signal in the joint recesses consistent with fluid.",
+        "possible_findings": [
+          {
+            "finding": "Joint effusion (mild to moderate)",
+            "confidence": 0.7,
+            "evidence": "Bright T2 signal fluid visible in the suprapatellar bursa and posterior joint recesses on multiple sagittal T2 slices; consistent with joint effusion."
+          },
+          {
+            "finding": "Posterior horn medial meniscus tear (possible)",
+            "confidence": 0.5,
+            "evidence": "Increased T2 signal within the posterior horn of the medial meniscus reaching the inferior articular surface on medial sagittal slices; morphological irregularity suggests possible horizontal or complex tear."
+          },
+          {
+            "finding": "ACL integrity questionable",
+            "confidence": 0.4,
+            "evidence": "The ACL demonstrates heterogeneous T2 signal with possible increased signal intensity; normal ACL should be uniformly low signal on T2; findings may indicate sprain, partial tear, or mucoid degeneration."
+          },
+          {
+            "finding": "PCL appears intact",
+            "confidence": 0.65,
+            "evidence": "PCL demonstrates uniformly low T2 signal with normal curved morphology on sagittal images."
+          },
+          {
+            "finding": "Articular cartilage irregularity (medial femoral condyle)",
+            "confidence": 0.4,
+            "evidence": "Subtle irregularity and possible focal thinning of articular cartilage over the medial femoral condyle on T2 sagittal images."
+          },
+          {
+            "finding": "No large osteochondral defect identified",
+            "confidence": 0.65,
+            "evidence": "No full-thickness cartilage defect with subchondral bone exposure visible on T2 sagittal images."
+          },
+          {
+            "finding": "Possible small popliteal (Baker) cyst",
+            "confidence": 0.5,
+            "evidence": "Bright T2 signal structure in the posteromedial knee between the medial gastrocnemius and semimembranosus tendons on posterior sagittal slices; morphology and signal consistent with a small popliteal cyst."
+          }
+        ],
+        "uncertainties": [
+          "Without fat suppression, bone marrow edema may be obscured by bright marrow fat signal.",
+          "Meniscal tear characterization requires correlation with coronal sequences.",
+          "ACL assessment is best performed on dedicated oblique coronal sequences.",
+          "T2 without fat suppression may underestimate subchondral bone marrow lesions.",
+          "Partial volume effects at 4mm slice thickness may affect meniscal assessment."
+        ],
+        "concise_summary": "Sagittal FSE T2 MRI of the right knee demonstrating a likely mild-to-moderate joint effusion (confidence 0.70) and a possible posterior horn medial meniscus tear with articular surface extension (confidence 0.50); a possible small Baker's cyst is also noted posteriorly. ACL signal heterogeneity raises the question of sprain, partial tear, or mucoid degeneration, though definitive ACL and meniscal assessment requires correlation with coronal and oblique sequences not evaluated here."
+      }
+    ],
+    "study_visual_description": "This is a multi-sequence MRI study of the right knee comprising six series: axial FSE PD (series-000001), coronal FSE PD (series-000002), coronal FSE T1 (series-000003), a localizer/scout sequence (series-000004), sagittal fat-suppressed FSE PD (series-000005), and sagittal FSE T2 (series-000006). The study provides comprehensive multiplanar coverage of the knee joint with high spatial resolution (0.293-0.332mm in-plane for diagnostic sequences). The imaging protocol is consistent with a standard clinical knee MRI protocol designed to evaluate internal derangement including menisci, cruciate and collateral ligaments, articular cartilage, and periarticular soft tissues. The knee demonstrates overall preserved joint architecture with possible internal derangement findings including meniscal signal alteration, possible ligamentous signal change, mild joint effusion, and subtle cartilage irregularity. Bone marrow signal appears grossly preserved on T1 sequences. Small skin/surface markers are visible laterally on axial images.",
+    "possible_findings": [
+      {
+        "series_id": "series-000002",
+        "finding": "Medial meniscus signal alteration, possible tear",
+        "confidence": 0.5,
+        "evidence": "Heterogeneous signal within the medial meniscus on coronal PD images with possible morphological irregularity; requires correlation with sagittal sequences for characterization."
+      },
+      {
+        "series_id": "series-000005",
+        "finding": "Posterior horn medial meniscus tear (possible)",
+        "confidence": 0.5,
+        "evidence": "Increased intrameniscal signal reaching articular surface on sagittal fat-suppressed PD images; morphological irregularity of posterior horn."
+      },
+      {
+        "series_id": "series-000006",
+        "finding": "Mild to moderate joint effusion",
+        "confidence": 0.7,
+        "evidence": "Bright T2 signal fluid in suprapatellar bursa and posterior joint recesses on sagittal T2 images."
+      },
+      {
+        "series_id": "series-000005",
+        "finding": "ACL signal alteration, possible sprain or partial tear",
+        "confidence": 0.4,
+        "evidence": "Heterogeneous signal in ACL region on fat-suppressed PD sagittal images; normal ACL should be uniformly low signal."
+      },
+      {
+        "series_id": "series-000006",
+        "finding": "Possible small popliteal (Baker) cyst",
+        "confidence": 0.5,
+        "evidence": "Bright T2 signal structure in posteromedial knee on posterior sagittal T2 slices consistent with fluid-filled cystic structure between medial gastrocnemius and semimembranosus."
+      },
+      {
+        "series_id": "series-000005",
+        "finding": "Possible subchondral bone marrow edema",
+        "confidence": 0.4,
+        "evidence": "Focal increased signal in subchondral bone on fat-suppressed PD images; fat suppression increases sensitivity for marrow edema."
+      },
+      {
+        "series_id": "series-000003",
+        "finding": "Normal fatty bone marrow signal without focal replacement",
+        "confidence": 0.75,
+        "evidence": "Uniformly bright T1 signal in femoral and tibial medullary cavities on coronal T1 images."
+      },
+      {
+        "series_id": "series-000006",
+        "finding": "Articular cartilage irregularity medial femoral condyle (possible)",
+        "confidence": 0.4,
+        "evidence": "Subtle focal cartilage thinning or irregularity on medial femoral condyle on sagittal T2 images."
+      }
+    ],
+    "uncertainties": [
+      "No explicit body part tag in DICOM metadata; knee anatomy confirmed visually and from series descriptions.",
+      "Laterality inferred as right knee from series-000004 description 'Loc (Right)'; not confirmed by DICOM body part tag.",
+      "Fat suppression homogeneity in series-000005 cannot be fully assessed from metadata alone; inhomogeneous fat suppression could create artifactual signal changes.",
+      "Clinical history, patient age, and symptoms are unknown, limiting contextual interpretation of findings.",
+      "No gadolinium contrast series identified; contrast-enhanced sequences would improve assessment of synovitis and vascular lesions.",
+      "Meniscal tear grading (Grade I, II, III) requires careful multiplanar correlation and cannot be definitively assigned from metadata-based analysis alone.",
+      "ACL tear versus mucoid degeneration versus magic angle artifact cannot be distinguished without full sequence parameter details (TE, TR) and clinical correlation.",
+      "This analysis is based on metadata and visual inspection of representative sample images; full series review by a qualified radiologist is required for diagnostic purposes.",
+      "The study date (2011-11-03 inferred from UIDs) suggests this is historical anonymized data used for demo purposes."
+    ],
+    "safety_note": "IMPORTANT: This output is generated for a non-clinical software portfolio demonstration using anonymized sample DICOM data only. It does NOT constitute medical advice, a radiological report, or a clinical diagnosis. All findings described are speculative inferences based on metadata and representative image samples and have not been reviewed or validated by a licensed radiologist or physician. This analysis must NOT be used for any clinical decision-making, patient management, or diagnostic purposes. Any actual medical imaging study must be interpreted by a qualified and licensed radiologist or appropriate medical professional in the context of the patient's full clinical history and presentation."
+  },
+  "postprocessing": {
+    "series_summary_model": "claude-sonnet-4-6",
+    "series_summary_count": 6,
+    "series_summary_api_calls": 6
+  }
+}

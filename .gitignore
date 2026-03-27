@@ -4,6 +4,7 @@
 
 # Local training data (large; see docs/cxr-demo.md)
 data/Chest-XRay-Pneumonia/
+data/DICOM_Study/
 
 # Training artifacts
 artifacts/

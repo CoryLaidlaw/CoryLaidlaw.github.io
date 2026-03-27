@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DICOM study one-call demo — Cory Laidlaw</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/site-shared.css">
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="../../css/technical-summary.css">
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="../../index.html">CL</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html"><span class="nav-link-label">About</span></a></li>
+      <li class="nav-dropdown is-current">
+        <details>
+          <summary><span class="nav-link-label">Projects</span></summary>
+          <ul class="nav-submenu">
+            <li><a href="../../dashboard/">Statistic Dashboard</a></li>
+            <li><a href="../../etl-playground/">CSV Cleanup</a></li>
+            <li><a href="../../model-console/">Model Comparison</a></li>
+            <li><a href="../cxr-demo/">Image Analysis</a></li>
+            <li><a href="../report-summarizer/">Report summarizer</a></li>
+            <li><a href="index.html" aria-current="page">DICOM One-Call</a></li>
+            <li><a href="../../projects.html#previous-projects">Previous projects</a></li>
+            <li><a href="../../projects.html">View all</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a href="../../contact.html"><span class="nav-link-label">Contact</span></a></li>
+    </ul>
+  </nav>
+
+  <p id="loadingLine" class="loading-line" role="status">Loading study analysis...</p>
+  <div id="loadErr" hidden>
+    <strong>Could not load the demo.</strong>
+    <span id="loadErrMsg"></span>
+    <p style="margin-top:0.5rem;font-size:0.85rem;color:var(--muted)">Run <code>python3 scripts/generate_dicom_study_demo.py</code>, then serve from repo root with <code>python3 -m http.server 8080</code> and open <code>/projects/dicom-study-demo/</code>.</p>
+  </div>
+
+  <main id="app" class="page-stack" hidden>
+    <p class="section-tag">// Anthropic API · One multimodal call</p>
+    <h1>DICOM study one-call analysis</h1>
+    <p class="lead">This demo runs a two-step offline pipeline: first, it preprocesses anonymized DICOM series and sends 10 slices per series in one direct Anthropic multimodal request; second, it runs a per-series summarization pass to add concise narrative takeaways. The webpage then renders static JSON with start/middle/end thumbnails per series. No runtime API calls occur in this page.</p>
+
+    <div id="disclaimer" class="disclaimer"></div>
+
+    <div class="panel summary-panel">
+      <div><span class="k">Study ID</span><span id="studyId">—</span></div>
+      <div><span class="k">Series</span><span id="seriesCount">—</span></div>
+      <div><span class="k">Selected slices</span><span id="sliceCount">—</span></div>
+      <div><span class="k">Generated</span><span id="generatedAt">—</span></div>
+    </div>
+
+    <section class="panel">
+      <h2>Study-level interpretation</h2>
+      <p id="studyVisual"></p>
+      <div>
+        <h3>Possible findings</h3>
+        <ul id="studyFindings"></ul>
+      </div>
+      <div>
+        <h3>Uncertainties</h3>
+        <ul id="studyUncertainties"></ul>
+      </div>
+      <p class="safety" id="safetyNote"></p>
+    </section>
+
+    <section>
+      <h2>Per-series analysis</h2>
+      <div id="seriesCards" class="series-grid"></div>
+    </section>
+
+    <section class="technical-summary" aria-labelledby="technical-summary-title">
+      <p class="technical-summary__label">// Technical summary</p>
+      <h2 class="technical-summary__title" id="technical-summary-title">What this demo uses</h2>
+      <div class="technical-summary__tags" aria-label="Technologies">
+        <span class="technical-summary__tag">pydicom</span>
+        <span class="technical-summary__tag">Anthropic API</span>
+        <span class="technical-summary__tag">Static JSON</span>
+        <span class="technical-summary__tag">JavaScript</span>
+      </div>
+      <div class="technical-summary__body">
+        <p>
+          The browser loads generated JSON and PNG files only. DICOM parsing, slice extraction, and model prompting happen offline in Python.
+        </p>
+        <ul>
+          <li><strong>Methodology:</strong> Step 1 runs one multimodal call using 10 evenly spaced slices per series plus curated DICOM metadata; Step 2 runs one concise-summary call per series and appends `concise_summary` text to each series result.</li>
+          <li><strong>Confidence policy:</strong> Findings are listed with a model-reported confidence score.</li>
+          <li><strong>Toolsets/technology used:</strong> Python scripts (`generate_dicom_study_demo.py`, `generate_dicom_series_summaries.py`), pydicom, Pillow, NumPy, Anthropic API, and vanilla JavaScript.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="site-footer site-footer-base">
+      <p>Educational demo only. Not a medical device and not for diagnosis, screening, or treatment decisions.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

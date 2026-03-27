@@ -1,0 +1,77 @@
+/* Shared "Technical summary" card for portfolio demos — uses each page’s :root tokens */
+
+.technical-summary {
+  margin-top: 2.5rem;
+  padding: 1.5rem 1.75rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.technical-summary__label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.technical-summary__title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.technical-summary__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.technical-summary__tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.technical-summary__body {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.technical-summary__body p + p {
+  margin-top: 0.75rem;
+}
+
+.technical-summary__body ul {
+  margin: 0.75rem 0 0 1.1rem;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.technical-summary__body li + li {
+  margin-top: 0.35rem;
+}
+
+.technical-summary__body strong {
+  color: var(--text);
+  font-weight: 500;
+}

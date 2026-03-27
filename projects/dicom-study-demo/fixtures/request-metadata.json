@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-03-27T03:26:39.612539+00:00",
+  "model": "claude-sonnet-4-6",
+  "api_calls": 1,
+  "study_dir": "/Users/corylaidlaw/Documents/GitHub/CoryLaidlaw.github.io/data/DICOM_Study",
+  "output_json": "/Users/corylaidlaw/Documents/GitHub/CoryLaidlaw.github.io/projects/dicom-study-demo/fixtures/study-analysis.json",
+  "series_count": 6,
+  "selected_slice_count": 18,
+  "analysis_slice_count": 60
+}

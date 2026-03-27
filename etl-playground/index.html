@@ -6,7 +6,9 @@
   <title>ETL Playground — Cory Laidlaw</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site-shared.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../css/technical-summary.css">
 </head>
 <body>
   <div class="cursor" id="cursor" aria-hidden="true"></div>
@@ -34,7 +36,7 @@
     </ul>
   </nav>
 
-  <main>
+  <main class="page-stack">
     <div class="section-tag">// Portfolio — Data tooling</div>
     <h1>ETL Playground</h1>
     <p class="hero-lead">
@@ -108,9 +110,37 @@
       <button type="button" class="btn btn-outline" id="btn-copy" disabled>Copy to clipboard</button>
       <button type="button" class="btn btn-outline" id="btn-reset">Clear all</button>
     </div>
+
+    <section class="technical-summary" id="technical-summary" aria-labelledby="technical-summary-title">
+      <p class="technical-summary__label">// Technical summary</p>
+      <h2 class="technical-summary__title" id="technical-summary-title">What this demo uses</h2>
+      <div class="technical-summary__tags" aria-label="Technologies">
+        <span class="technical-summary__tag">JavaScript</span>
+        <span class="technical-summary__tag">Papa Parse</span>
+        <span class="technical-summary__tag">CSV</span>
+        <span class="technical-summary__tag">Client-side ETL</span>
+      </div>
+      <div class="technical-summary__body">
+        <p>
+          This demo cleans messy CSV files in the browser and shows exactly what changed, so users can trust the result without sending data to a server.
+        </p>
+        <ul>
+          <li><strong>Methodology:</strong> A fixed ETL pipeline runs step-by-step (parse, clean, type handling, outlier control, missing-value fill). The same in-memory table powers reports, previews, and downloads.</li>
+          <li>
+            <strong>Technical terms:</strong>
+            <ul>
+              <li><strong>ETL:</strong> Extract, Transform, Load - collect data, clean it, and prepare it for use.</li>
+              <li><strong>Winsorize:</strong> Limits extreme values so outliers do less damage.</li>
+              <li><strong>Deterministic:</strong> Same input gives the same output every time.</li>
+            </ul>
+          </li>
+          <li><strong>Toolsets/technology used:</strong> JavaScript, Papa Parse, CSV processing, and client-side browser storage/memory only.</li>
+        </ul>
+      </div>
+    </section>
   </main>
 
-  <footer>
+  <footer class="site-footer-base">
     <span>© 2026 Cory Laidlaw · ETL Playground (client-side only)</span>
   </footer>
 
