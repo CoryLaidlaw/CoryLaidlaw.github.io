@@ -1,0 +1,60 @@
+{
+  "disclaimer": "Synthetic fictional reports for demonstration only. Not real patient data.",
+  "reports": [
+    {
+      "id": "chest-ct-nodule",
+      "title": "Chest CT — incidental pulmonary nodule",
+      "modality": "CT Chest",
+      "rawReport": "INDICATION: 58-year-old with cough; rule out pneumonia.\n\nTECHNIQUE: Non-contrast CT of the chest was performed using standard protocol. Coronal and sagittal reformations were reviewed.\n\nFINDINGS: The lungs are clear without focal consolidation, pleural effusion, or pneumothorax. There is a 6 mm non-calcified nodule in the right upper lobe (series 2, image 41), stable compared with prior CT from 18 months ago. Mediastinal and hilar lymph nodes are not enlarged. The heart size is normal. The visualized upper abdomen is unremarkable.\n\nIMPRESSION:\n1. No acute cardiopulmonary process.\n2. Stable 6 mm right upper lobe pulmonary nodule; continued annual low-dose CT surveillance per existing protocol is reasonable.\n3. No evidence of pneumonia.",
+      "summaries": {
+        "impressionSummary": "No acute cardiopulmonary abnormality identified. The lungs are clear with no pneumonia, pleural effusion, or pneumothorax. A 6 mm non-calcified nodule in the right upper lobe is unchanged from the prior CT 18 months ago, indicating stability. Continued annual surveillance imaging is appropriate.",
+        "keyFindings": [
+          "No focal consolidation, pleural effusion, or pneumothorax detected — no evidence of pneumonia.",
+          "6 mm non-calcified pulmonary nodule in the right upper lobe (series 2, image 41).",
+          "Nodule is stable in size and appearance compared with CT performed 18 months prior.",
+          "Mediastinal and hilar lymph nodes are within normal size limits.",
+          "Heart size is normal; visualized upper abdominal structures are unremarkable."
+        ],
+        "followUpRecommendations": "Annual low-dose CT chest surveillance for the known right upper lobe nodule is recommended per current guidelines, given its stability over 18 months. If the patient develops new or worsening respiratory symptoms (hemoptysis, significant weight loss, progressive dyspnea), earlier re-imaging or pulmonology referral should be considered. Clinical correlation with the presenting cough is advised; if symptoms persist, additional workup (e.g., bronchoscopy, infectious workup) may be warranted at the treating clinician's discretion.",
+        "patientSummary": "Your CT scan did not show any signs of pneumonia or other urgent lung problems. There is a small spot (about 6 mm, roughly the size of a pea) in the upper part of your right lung that was also seen on your scan 18 months ago and has not changed in size, which is a reassuring sign. Your doctor will likely recommend a follow-up low-dose CT scan in about a year to keep an eye on it. Please discuss your ongoing cough with your doctor so they can determine if any additional tests are needed."
+      }
+    },
+    {
+      "id": "mri-brain-headaches",
+      "title": "MRI brain — headache evaluation",
+      "modality": "MRI Brain",
+      "rawReport": "INDICATION: 34-year-old with chronic headaches; exclude structural lesion.\n\nTECHNIQUE: MRI of the brain was performed without and with intravenous gadolinium on a 1.5 T system. Sequences include sagittal T1, axial T2, axial FLAIR, diffusion-weighted imaging, and post-contrast T1 in multiple planes.\n\nFINDINGS: No intracranial mass, hemorrhage, or acute infarct. Ventricular size and sulcal pattern are age-appropriate. There is no abnormal parenchymal or leptomeningeal enhancement. The major intracranial flow voids are preserved. The pituitary gland and sella are unremarkable. Paranasal sinuses and mastoid air cells are clear.\n\nIMPRESSION: Normal MRI of the brain. No intracranial mass or acute process identified. Clinical correlation for headache etiology is recommended.",
+      "summaries": {
+        "impressionSummary": "Normal brain MRI with and without contrast in a 34-year-old presenting with chronic headaches. No mass, hemorrhage, acute infarct, or abnormal enhancement identified. No structural cause for headaches detected on this study.",
+        "keyFindings": [
+          "No intracranial mass, hemorrhage, or acute infarction identified.",
+          "No abnormal parenchymal or leptomeningeal contrast enhancement.",
+          "Ventricular size and sulcal pattern are normal for patient age.",
+          "Major intracranial flow voids are preserved, suggesting no gross vascular occlusion.",
+          "Pituitary gland and sella turcica appear normal.",
+          "Paranasal sinuses and mastoid air cells are clear with no signs of sinusitis or infection."
+        ],
+        "followUpRecommendations": "Given the normal MRI, structural pathology has been effectively excluded as a cause of the patient's chronic headaches. Clinical correlation is recommended to evaluate for primary headache disorders such as migraine or tension-type headache. If headache character changes significantly—particularly new onset of thunderclap headache, progressive worsening, neurological deficits, or headache associated with fever or papilledema—prompt re-evaluation and possible repeat imaging or lumbar puncture should be considered. Referral to neurology may be appropriate for ongoing headache management.",
+        "patientSummary": "Your brain MRI came back completely normal. The scan looked at your brain in detail, both with and without a contrast dye, and found no tumors, bleeding, strokes, or other structural problems that could be causing your headaches. This is reassuring news. Because the scan does not show a physical cause, your doctor will likely explore other common reasons for chronic headaches, such as migraines or tension headaches, and discuss treatment options with you."
+      }
+    },
+    {
+      "id": "us-ruq-gallstones",
+      "title": "Abdominal ultrasound — right upper quadrant pain",
+      "modality": "Ultrasound Abdomen RUQ",
+      "rawReport": "INDICATION: 45-year-old with right upper quadrant pain after meals.\n\nTECHNIQUE: Grayscale and Doppler ultrasound of the right upper quadrant was performed with the patient fasting.\n\nFINDINGS: The liver shows homogeneous echotexture without focal lesion. The common bile duct measures 4 mm and is not dilated. The gallbladder contains multiple echogenic calculi with posterior acoustic shadowing; wall thickness is 3 mm without pericholecystic fluid or sonographic Murphy sign. The pancreas and right kidney are partially visualized and appear unremarkable within limits of the study.\n\nIMPRESSION:\n1. Cholelithiasis without sonographic evidence of acute cholecystitis.\n2. Recommend clinical correlation; surgical consultation may be considered for symptomatic cholelithiasis.",
+      "summaries": {
+        "impressionSummary": "Ultrasound demonstrates multiple gallstones without imaging features of acute gallbladder inflammation. The bile duct is normal in caliber, and the liver appears unremarkable. Clinical symptoms of postprandial right upper quadrant pain are consistent with symptomatic cholelithiasis.",
+        "keyFindings": [
+          "Multiple echogenic gallstones identified within the gallbladder with posterior acoustic shadowing.",
+          "No sonographic signs of acute cholecystitis: gallbladder wall thickness is normal (3 mm), no pericholecystic fluid, and no sonographic Murphy sign.",
+          "Common bile duct measures 4 mm, within normal limits — no biliary obstruction detected.",
+          "Liver echotexture is homogeneous with no focal lesions identified.",
+          "Pancreas and right kidney appear unremarkable within the limits of visualization."
+        ],
+        "followUpRecommendations": "Clinical correlation with the patient's symptoms is recommended. Given symptomatic cholelithiasis (postprandial pain), a surgical consultation for possible cholecystectomy should be considered. If symptoms worsen — particularly with fever, jaundice, severe or constant pain, or elevated liver/pancreatic enzymes — prompt reassessment and repeat imaging or laboratory workup are warranted to exclude complications such as acute cholecystitis, choledocholithiasis, or biliary pancreatitis.",
+        "patientSummary": "Your ultrasound found gallstones — small, hard deposits inside your gallbladder. The good news is there are no signs right now that your gallbladder is inflamed or infected, and the bile duct that drains from your gallbladder is not blocked. Gallstones can cause the pain you feel after eating. Your doctor may refer you to a surgeon to discuss whether removing the gallbladder is the right next step for you. If you develop a fever, yellowing of your skin or eyes, or your pain becomes severe and constant, seek medical attention promptly."
+      }
+    }
+  ]
+}

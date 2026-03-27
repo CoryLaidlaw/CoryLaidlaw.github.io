@@ -1,0 +1,4 @@
+# Offline only: regenerate projects/report-summarizer/fixtures/reports.json from reports_input.json.
+# Not required to view the static site.
+anthropic>=0.40.0
+python-dotenv>=1.0.0

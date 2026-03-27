@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radiology report summarizer — Cory Laidlaw</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="../../index.html">CL</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html"><span class="nav-link-label">About</span></a></li>
+      <li class="nav-dropdown is-current">
+        <details>
+          <summary><span class="nav-link-label">Projects</span></summary>
+          <ul class="nav-submenu">
+            <li><a href="../../dashboard/">Statistic Dashboard</a></li>
+            <li><a href="../../etl-playground/">CSV Cleanup</a></li>
+            <li><a href="../../model-console/">Model Comparison</a></li>
+            <li><a href="../cxr-demo/">Image Analysis</a></li>
+            <li><a href="index.html" aria-current="page">Report summarizer</a></li>
+            <li><a href="../../projects.html#previous-projects">Previous projects</a></li>
+            <li><a href="../../projects.html">View all</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a href="../../contact.html"><span class="nav-link-label">Contact</span></a></li>
+    </ul>
+  </nav>
+
+  <p id="loadingLine" class="loading-line" role="status">Loading report data…</p>
+  <div id="loadErr" hidden>
+    <strong>Could not load the demo.</strong>
+    <span id="loadErrMsg"></span>
+    <p style="margin-top:0.5rem;font-size:0.85rem;color:var(--muted)">Serve the site over HTTP (e.g. from repo root: <code>python3 -m http.server 8080</code>) then open <code>/projects/report-summarizer/</code></p>
+  </div>
+
+  <main id="app" hidden>
+    <p class="section-tag">// Anthropic API · Pre-generated summaries</p>
+    <h1>Radiology report summarizer</h1>
+    <p class="lead">This demo showcases outputs from running synthetic radiology reports through the <strong>Anthropic API</strong> (offline, via a local script)—each report is expanded into four audience-specific summaries: an impression-style summary, key findings, follow-up recommendations, and a plain-language patient version. The live site only loads static JSON; nothing is sent to Anthropic from your browser.</p>
+
+    <p id="dataDisclaimer" class="json-disclaimer" role="note"></p>
+
+    <div class="report-toolbar">
+      <label for="reportSelect">Report</label>
+      <select id="reportSelect" class="report-select" aria-label="Select a sample report"></select>
+    </div>
+
+    <div class="report-layout">
+      <div class="panel report-original">
+        <h2>Original report</h2>
+        <pre id="rawReport" class="report-pre"></pre>
+      </div>
+
+      <div class="summary-grid" role="region" aria-label="Summaries by audience">
+        <section class="panel summary-card summary-block" aria-labelledby="h-impression">
+          <h3 id="h-impression">Impression summary</h3>
+          <p id="impressionSummary"></p>
+        </section>
+        <section class="panel summary-card summary-block" aria-labelledby="h-key">
+          <h3 id="h-key">Key findings</h3>
+          <ul id="keyFindings"></ul>
+        </section>
+        <section class="panel summary-card summary-block" aria-labelledby="h-follow">
+          <h3 id="h-follow">Follow-up recommendations</h3>
+          <p id="followUpRecommendations"></p>
+        </section>
+        <section class="panel summary-card summary-block" aria-labelledby="h-patient">
+          <h3 id="h-patient">Patient summary</h3>
+          <p id="patientSummary"></p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <p>Illustration only. Summaries are synthetic and do not constitute medical advice.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

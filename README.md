@@ -69,3 +69,9 @@ Static demo at `projects/cxr-demo/`: binary NORMAL vs PNEUMONIA on curated sampl
 
 Preview: `http://localhost:8080/projects/cxr-demo/`
 
+## Radiology report summarizer
+
+Static demo at `projects/report-summarizer/`: the browser loads bundled JSON only (no live API on the site). You can **regenerate** `fixtures/reports.json` locally with `scripts/generate_report_summaries.py` and the Anthropic API using `fixtures/reports_input.json` as the source—see [`projects/report-summarizer/README.md`](projects/report-summarizer/README.md).
+
+Preview: `http://localhost:8080/projects/report-summarizer/`
+
