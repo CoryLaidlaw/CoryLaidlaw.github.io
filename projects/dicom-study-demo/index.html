@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DICOM study one-call demo — Cory Laidlaw</title>
+  <title>DICOM Study Demo — Cory Laidlaw</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/site-shared.css">
@@ -23,8 +23,8 @@
             <li><a href="../../etl-playground/">CSV Cleanup</a></li>
             <li><a href="../../model-console/">Model Comparison</a></li>
             <li><a href="../cxr-demo/">Image Analysis</a></li>
-            <li><a href="../report-summarizer/">Report summarizer</a></li>
-            <li><a href="index.html" aria-current="page">DICOM One-Call</a></li>
+            <li><a href="../report-summarizer/">Report Summarizer</a></li>
+            <li><a href="index.html" aria-current="page">DICOM Analysis</a></li>
             <li><a href="../../projects.html#previous-projects">Previous projects</a></li>
             <li><a href="../../projects.html">View all</a></li>
           </ul>
@@ -43,7 +43,7 @@
 
   <main id="app" class="page-stack" hidden>
     <p class="section-tag">// Anthropic API · One multimodal call</p>
-    <h1>DICOM study one-call analysis</h1>
+    <h1>DICOM Study Analysis</h1>
     <p class="lead">This demo runs a two-step offline pipeline: first, it preprocesses anonymized DICOM series and sends 10 slices per series in one direct Anthropic multimodal request; second, it runs a per-series summarization pass to add concise narrative takeaways. The webpage then renders static JSON with start/middle/end thumbnails per series. No runtime API calls occur in this page.</p>
 
     <div id="disclaimer" class="disclaimer"></div>
